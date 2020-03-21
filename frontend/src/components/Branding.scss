@@ -1,8 +1,19 @@
 @import "~bulma/sass/utilities/_all";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap");
 
 // Set our font
-$family-primary: "Quicksand", sans-serif;
+// $family-primary: "Quicksand", sans-serif;
+$family-primary: "Muli", sans-serif;
+.title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Quicksand", sans-serif;
+}
 
 // Set your colors
 $primary: #ff966e;
@@ -10,10 +21,8 @@ $primary-invert: findColorInvert($primary);
 $secondary: #2d3cb9;
 $black: #1e1e1e;
 $black-invert: findColorInvert($black);
-
-$family-primary: "Quicksand", sans-serif;
-
-
+$blue: #2d3cb9;
+$blue-invert: findColorInvert($blue);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (

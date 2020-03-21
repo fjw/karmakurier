@@ -1,33 +1,29 @@
 <template>
-  <nav class="navigation" :class="{inverted: inverted }">
-    <router-link to="/menu" class="menu">
-      <i class="fas fa-bars"></i>
-    </router-link>
-
-    <div class="logo">
-      <router-link to="/">
-        <img v-if="!inverted" src="@/assets/logo.svg" alt="Karmakurier Logo" />
-        <img v-if="inverted" src="@/assets/logo_inverted.svg" alt="Karmakurier Logo" />
-      </router-link>
-    </div>
-
-    <div class="search">
-      <router-link to="/search">
-        <i class="fas fa-search"></i>
-      </router-link>
-    </div>
-  </nav>
+    <nav class="navigation normalize-width">
+        <div class="logo" @click="$router.push('/')">
+            <img src="@/assets/logo.svg" alt="Karmakurier Logo" />
+        </div>
+        <i class="fas fa-bars"></i>
+        <div class="menu-items">
+            <ul>
+                <li>suche</li>
+                <li>biete</li>
+                <li>faq</li>
+                <li>kontakt</li>
+            </ul>
+        </div>
+    </nav>
 </template>
 
 <script>
 export default {
-  name: "KkNavigation",
-  props: {
-    inverted: {
-      type: Boolean,
-      default: false
+    name: "KkNavigation",
+    props: {
+        inverted: {
+            type: Boolean,
+            default: false
+        }
     }
-  }
 };
 </script>
 
@@ -35,26 +31,43 @@ export default {
 @import "../Branding.scss";
 
 .navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.75rem;
-}
-
-.menu,
-.search {
-  font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo img {
-  width: 10rem;
+    width: 7rem;
 }
 
-.inverted {
-  background-color: $primary;
-  color: $secondary;
-  a {
-    color: $secondary;
-  }
+.fas {
+    display: inline-block;
+    font-size: 22px;
+    @media only screen and (min-width: 560px) {
+        display: none;
+    }
+}
+
+.menu-items {
+    display: none;
+    @media only screen and (min-width: 560px) {
+        display: block;
+    }
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            font-weight: 700;
+            padding-left: 40px;
+            &:hover {
+                cursor: pointer;
+                color: $primary;
+            }
+        }
+    }
 }
 </style>
