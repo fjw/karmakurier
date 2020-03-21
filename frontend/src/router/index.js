@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import KkDashboard from "../views/KkDashboard.vue";
 import KkHome from "../views/KkHome.vue";
+import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
 		name: "Dashboard",
 		component: KkDashboard
 	},
+    {
+        path: "/auftraege",
+        name: "AssignmentOverview",
+        component: KkAssignmentOverview
+    },
 ];
 
 const router = new VueRouter({
