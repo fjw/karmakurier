@@ -56,7 +56,7 @@
 
                     <b-checkbox class="column is-full" v-model="models.agbCheckbox">AGB checkbox</b-checkbox>
                     <div class="column flex-center">
-                        <b-button type="is-primary" :disabled="models.agbCheckbox">Einkauf fordern</b-button>
+                        <b-button type="is-primary" :disabled="!models.agbCheckbox">Einkauf fordern</b-button>
                     </div>
                 </section>
             </div>
