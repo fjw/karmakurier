@@ -2325,6 +2325,13 @@ bser@2.1.1:
   dependencies:
     node-int64 "^0.4.0"
 
+buefy@^0.8.13:
+  version "0.8.13"
+  resolved "https://registry.yarnpkg.com/buefy/-/buefy-0.8.13.tgz#90ce1645807c15d81f584dc78a2090a0feb7a70b"
+  integrity sha512-SpJq1Bl569mT6YujrEpyqn1al6U2PcBBQkVdgdKFrW+zjh1BAcs3+sNx7+r0tPSBsLYsSU2ZZsfkFzWOnOTX8A==
+  dependencies:
+    bulma "0.7.5"
+
 buffer-from@1.x, buffer-from@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
@@ -2358,6 +2365,11 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
+
+bulma@0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.5.tgz#35066c37f82c088b68f94450be758fc00a967208"
+  integrity sha512-cX98TIn0I6sKba/DhW0FBjtaDpxTelU166pf7ICXpCCuplHWyu6C9LYZmL5PEsnePIeJaiorsTEzzNk3Tsm1hw==
 
 bytes@3.0.0:
   version "3.0.0"
