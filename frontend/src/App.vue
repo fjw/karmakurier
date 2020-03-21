@@ -1,28 +1,28 @@
 <template>
-    <div id="app">
-        <Navigation />
-        <router-view />
-    </div>
+  <div id="app">
+    <Navigation />
+    <router-view />
+  </div>
 </template>
 
 <script>
 import Navigation from "@/components/organisms/KkNavigation.vue";
 
 export default {
-    components: {
-        Navigation
-    }
+  components: {
+    Navigation
+  }
 };
 </script>
 
 <style lang="scss">
-@import "@/Components/Branding.scss";
+@import "@/components/Branding.scss";
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #app {
-    // padding: 1rem 5rem;
+  // padding: 1rem 5rem;
 }
 </style>
