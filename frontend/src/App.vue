@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="container">
+    <div id="app">
         <KkNavigation />
         <router-view />
     </div>
@@ -28,6 +28,9 @@ body {
 }
 
 .normalize-width {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
     padding: 0.75rem 24px 0.75rem 24px;
     @media only screen and (min-width: 512px) {
         padding: 0.75rem 3rem 0.75rem 3rem;
