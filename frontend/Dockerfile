@@ -26,7 +26,7 @@ COPY ./docker/nginx-vhost.conf /etc/nginx/conf.d/default.conf
 #Setup SSL/TLS/HTTPS for Nginx
 RUN mkdir /etc/nginx/ssl
 RUN chmod 700 /etc/nginx/ssl
-COPY ssl/karmakurier-org.crt /etc/nginx/ssl/
-COPY ssl/karmakurier-org.key /etc/nginx/ssl/
+COPY ./docker/ssl/karmakurier-org.crt /etc/nginx/ssl/
+COPY ./docker/ssl/karmakurier-org.key /etc/nginx/ssl/
 
 EXPOSE 80 443
