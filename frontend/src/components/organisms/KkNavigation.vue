@@ -6,10 +6,10 @@
         <i class="fas fa-bars"></i>
         <div class="menu-items">
             <ul>
-                <li>suche</li>
-                <li>biete</li>
-                <li>faq</li>
-                <li>kontakt</li>
+                <li><router-link to="suche">suche</router-link></li>
+                <li><router-link to="biete">biete</router-link></li>
+                <li><router-link to="faq">faq</router-link></li>
+                <li><router-link to="kontakt">kontakt</router-link></li>
             </ul>
         </div>
     </nav>
