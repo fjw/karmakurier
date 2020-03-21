@@ -12,7 +12,8 @@ import KkSearch from "../views/KkSearch.vue";
 import KkOffer from "../views/KkOffer.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
-import KkHelpNeededSignup from "../views/KkHelpNeededSignup.vue";
+
+import KkSearchHelp from "../views/KkSearchHelp.vue";
 
 Vue.use(VueRouter);
 
@@ -28,11 +29,6 @@ const routes = [
 		component: KkMenu
 	},
 	{
-		path: "/help-needed-signup",
-		name: "Help needed signup",
-		component: KkHelpNeededSignup
-	},
-	{
 		path: "/dashboard",
 		name: "Dashboard",
 		component: KkDashboard
@@ -42,13 +38,13 @@ const routes = [
 		name: "AssignmentOverview",
 		component: KkAssignmentOverview
 	},
-    {
-        path: "/auftragsdetails",
-        name: "AssignmentDetails",
-        component: KkAssignmentDetails
-    },
 	{
-		path: "/thank-you",
+		path: "/auftragsdetails",
+		name: "AssignmentDetails",
+		component: KkAssignmentDetails
+	},
+	{
+		path: "/danke",
 		name: "ThankYou",
 		component: KkThankYou
 	},
@@ -58,7 +54,7 @@ const routes = [
 		component: KkHelperLogin
 	},
 	{
-		path: "/signup",
+		path: "/moechte-helfen",
 		name: "HelperSignup",
 		component: KkHelperSignup
 	},
@@ -81,6 +77,11 @@ const routes = [
 		path: "/kontakt",
 		name: "HelperContact",
 		component: KkContact
+	},
+	{
+		path: "/suche-hilfe",
+		name: "SearchHelp",
+		component: KkSearchHelp
 	}
 ];
 
