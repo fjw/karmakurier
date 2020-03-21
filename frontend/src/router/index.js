@@ -37,9 +37,10 @@ const routes = [
 		component: KkAssignmentOverview
 	},
 	{
-		path: "/auftragsdetails",
+		path: "/auftragsdetails/:id",
 		name: "AssignmentDetails",
-		component: KkAssignmentDetails
+		component: KkAssignmentDetails,
+		props: true
 	},
 	{
 		path: "/danke",

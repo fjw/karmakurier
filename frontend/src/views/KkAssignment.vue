@@ -28,7 +28,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <router-link class="card-footer-item" to="/auftragsdetails">Jetzt helfen!</router-link>
+                <router-link class="card-footer-item" :to="{ name: 'AssignmentDetails', params: { id: id }}">Jetzt helfen!</router-link>
             </footer>
         </b-collapse>
 
@@ -40,6 +40,10 @@
         name: "KkAssignment",
 
         props: {
+            id: {
+                type: Number,
+                required: true
+            },
             name: String,
             date: Date,
             description: String,
@@ -66,11 +70,9 @@
     @import "@/components/Branding.scss";
 
     .card {
-
         margin: $generalmargin;
 
         .card-header-title {
-
             display: flex;
             justify-content: space-between;
 
@@ -78,8 +80,6 @@
                 text-align: right;
                 font-weight: normal;
             }
-
         }
-
     }
 </style>

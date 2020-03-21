@@ -18,6 +18,7 @@
             class=""
             v-for="assignment in visibleassignments"
             :key="assignment.id"
+            :id="assignment.id"
             :name="assignment.name"
             :date="assignment.date"
             :description="assignment.description"
