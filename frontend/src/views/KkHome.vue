@@ -18,7 +18,7 @@
                 <img src="@/assets/illustrations/arrow.png" alt="pfeil bild" />
             </div>
             <div class="cta">
-                <div class="custom-button blue" @click="$router.push('/signup')">Ich möchte helfen</div>
+                <div class="custom-button blue" @click="$router.push('/moechte-helfen')">Ich möchte helfen</div>
                 <img src="@/assets/illustrations/blue_persons.png" alt="kann helfen bild" />
             </div>
         </div>
