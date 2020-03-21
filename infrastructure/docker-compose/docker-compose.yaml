@@ -4,7 +4,7 @@ services:
 
   web:
     build:
-      context: ./frontend
+      context: ../../frontend
       dockerfile: Dockerfile
     image: coronakarma-webapp:1.0
     container_name: coronakarma-webapp
@@ -19,7 +19,7 @@ services:
 
   api:
     build:
-      context: ./backend
+      context: ../../backend
       dockerfile: Dockerfile
     image: coronakarma-api:1.0
     container_name: coronakarma-api
