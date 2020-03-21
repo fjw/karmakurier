@@ -1,12 +1,11 @@
 <template>
-    <div class="home">
-        <h1>Welcome to Coronakarma</h1>
+    <div class="headline">
+        <h1>Hier kommt das Registrierungsformular hin</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Home",
     components: {}
 };
 </script>
