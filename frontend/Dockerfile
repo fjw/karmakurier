@@ -15,10 +15,10 @@ RUN npm run build
 FROM nginx:1.16.1-alpine
 
 # Copy the WebApp files
-COPY --from builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Copy some Nginx related files
-COPY ./docker/nginx-error.html /usr/share/nginx/html
+COPY ./docker/nginx-http-error.html /usr/share/nginx/html
 COPY ./docker/nginx-vhost.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80 443
