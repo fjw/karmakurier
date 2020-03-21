@@ -4,6 +4,7 @@ import KkDashboard from "../views/KkDashboard.vue";
 import KkHome from "../views/KkHome.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 import KkThankYou from "../views/KkThankYou.vue";
+import KkLogin from "../views/KkLogin.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
 		path: "/thank-you",
 		name: "ThankYou",
 		component: KkThankYou
+	},
+	{
+		path: "/login",
+		name: "Login",
+		component: KkLogin
 	}
 ];
 
