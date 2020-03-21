@@ -4,6 +4,7 @@ import KkDashboard from "../views/KkDashboard.vue";
 import KkHome from "../views/KkHome.vue";
 import KkMenu from "../views/KkMenu.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
+import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkThankYou from "../views/KkThankYou.vue";
 import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkHelperSignup from "../views/KkHelperSignup.vue";
@@ -35,6 +36,11 @@ const routes = [
 		name: "AssignmentOverview",
 		component: KkAssignmentOverview
 	},
+    {
+        path: "/auftragsdetails",
+        name: "AssignmentDetails",
+        component: KkAssignmentDetails
+    },
 	{
 		path: "/thank-you",
 		name: "ThankYou",
