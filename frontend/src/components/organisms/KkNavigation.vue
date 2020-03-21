@@ -1,6 +1,6 @@
 <template>
     <nav class="navigation normalize-width">
-        <div class="logo" @click="$router.push('/')">
+        <div class="logo" @click="loggedIn ? $router.push('/dashboard') : $router.push('/')">
             <!-- <img src="@/assets/logo.svg" alt="Karmakurier Logo" /> -->
             <video autoplay muted>
                 <source src="@/assets/logo_animated_cropped.mp4" type="video/mp4" />
