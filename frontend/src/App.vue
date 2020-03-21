@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Navigation from "@/components/organisms/Navigation.vue";
+import Navigation from "@/components/organisms/KkNavigation.vue";
 
 export default {
   components: {

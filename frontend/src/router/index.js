@@ -1,15 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Dashboard from "../views/Dashboard.vue";
+import KkDashboard from "../views/KkDashboard.vue";
+import KkHome from "../views/KkHome.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: "/",
+		name: "Home",
+		component: KkHome
+	},
+	{
+		path: "/dashboard",
 		name: "Dashboard",
-		component: Dashboard
-	}
+		component: KkDashboard
+	},
 ];
 
 const router = new VueRouter({
