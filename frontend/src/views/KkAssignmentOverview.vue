@@ -106,11 +106,11 @@
                 this.client.apis.default.get_orders__zipCode_({ zipCode: this.plzfilter })
                     .then(response => {
                         // @todo Handle response
-                        console.log(response);
+                        //console.log(response);
                     })
                     .catch(error => {
                         // @todo Handle error?
-                        console.error(error);
+                        //console.error(error);
                     })
                     .finally(() => {
                         // Unset loading state.
