@@ -16,7 +16,7 @@
         </div>
         <p>
             Du hast dein Passwort vergessen? Dann
-            <router-link to="forgot-password">hier clicken.</router-link>
+            <router-link to="forgot-password">klick hier.</router-link>
         </p>
     </div>
 </template>
