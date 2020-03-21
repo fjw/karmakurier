@@ -34,6 +34,9 @@ services:
       - db
     ports:
       - "1881:1881"
+      - "1882:1882"
+      - "8082:8082"
+      - "8083:8083"
     networks:
       - coronakarma-network
     #command: ./wait-for.sh db:5432 -- npm start
