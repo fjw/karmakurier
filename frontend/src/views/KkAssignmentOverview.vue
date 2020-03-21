@@ -1,8 +1,22 @@
 <template>
     <div>
 
+        <div class="plzfilterinput">
+            <b-field label="PLZ">
+                <b-input v-model="plzfilter"></b-input>
+            </b-field>
+
+            <p v-if="plzfilter === ''">
+                Bitte geben Sie Ihre Postleitzahl an.
+            </p>
+
+            <p v-if="plzfilter !== '' && visibleassignments.length === 0">
+                Leider wurden keine Aufträge gefunden. Bitte suchen Sie auch nach Postleitzahlen im Umkreis.
+            </p>
+        </div>
+
         <kk-assignment class=""
-            v-for="assignment in assignments"
+            v-for="assignment in visibleassignments"
             :key="assignment.id"
             :name="assignment.name"
             :date="assignment.date"
@@ -10,6 +24,9 @@
             :town="assignment.town"
             :plz="assignment.plz"
         ></kk-assignment>
+
+
+
     </div>
 </template>
 
@@ -20,6 +37,7 @@
         components: {KkAssignment},
         data() {
             return {
+                plzfilter: "",
                 assignments: [
 
                     {
@@ -50,9 +68,25 @@
             };
         },
 
+        computed: {
+            visibleassignments() {
+
+                return this.assignments.filter(
+                    assignment => assignment.plz.startsWith(this.plzfilter) && this.plzfilter !== ""
+                );
+
+            }
+        }
+
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    .plzfilterinput {
+        margin: 20px;
 
+        .control {
+            width: 90px;
+        }
+    }
 </style>
