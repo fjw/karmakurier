@@ -12,7 +12,7 @@
                 <div
                     class="custom-button orange"
                     @click="$router.push('/suche-hilfe')"
-                >Ich brauche hilfe</div>
+                >Ich brauche Hilfe</div>
             </div>
             <div class="middle">
                 <img src="@/assets/illustrations/arrow.png" alt="pfeil bild" />

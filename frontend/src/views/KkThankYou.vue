@@ -1,7 +1,7 @@
 <template>
     <div class="thank-you-wrapper">
         <div class="title">Vielen Dank!</div>
-        <div class="subtitle">Wie es weiter geht erklären wir dir in dem folgenden Video.</div>
+        <div class="subtitle">Wie es weiter geht erklären wir Ihnen in dem folgenden Video.</div>
         <div class="video">
             <iframe
                 width="560"

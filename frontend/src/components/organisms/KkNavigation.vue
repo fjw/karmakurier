@@ -7,10 +7,10 @@
         <div class="menu-items">
             <ul>
                 <li>
-                    <router-link to="suche">suche</router-link>
+                    <router-link to="/suche-hilfe">suche</router-link>
                 </li>
                 <li>
-                    <router-link to="biete">biete</router-link>
+                    <router-link to="/moechte-helfen">biete</router-link>
                 </li>
                 <li>
                     <router-link to="faq">faq</router-link>
