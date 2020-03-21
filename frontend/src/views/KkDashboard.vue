@@ -1,20 +1,20 @@
 <template>
-    <div class="dashboard-wrapper normalize-width">
-        <!-- <div class="overview-wrapper">
-            <div class="title">
-                <span>245</span> Karma Punkte gesammelt.
-            </div>
-        </div>-->
-        <KkTaskList />
+    <div class="dashboard-wrapper">
+        <KkKarmaOverview />
+        <div class="normalize-width">
+            <KkTaskList />
+        </div>
     </div>
 </template>
 
 <script>
+import KkKarmaOverview from "@/components/molecules/KkKarmaOverview";
 import KkTaskList from "@/components/organisms/KkTaskList";
 
 export default {
     components: {
-        KkTaskList
+        KkTaskList,
+        KkKarmaOverview
     }
 };
 </script>
