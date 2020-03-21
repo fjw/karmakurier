@@ -28,7 +28,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <router-link class="card-footer-item" to="/foo">Jetzt helfen!</router-link>
+                <router-link class="card-footer-item" to="/auftragsdetails">Jetzt helfen!</router-link>
             </footer>
         </b-collapse>
 
@@ -63,10 +63,11 @@
 </script>
 
 <style scoped lang="scss">
+    @import "@/components/Branding.scss";
 
     .card {
 
-        margin: 20px;
+        margin: $generalmargin;
 
         .card-header-title {
 

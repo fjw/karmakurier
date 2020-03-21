@@ -1,22 +1,25 @@
 <template>
     <div>
-        <h1>Auftrag</h1>
+        <h1 class="title">Auftrag</h1>
 
-        <h2>
-            {{name}}
-        </h2>
+        <div class="leftright">
+            <h2>
+                {{name}}
+            </h2>
+
+            <p>
+                vor 2 Minuten ( 22.03 14:00 )
+            </p>
+        </div>
 
         <p>
-            vor 2 Minuten ( 22.03 14:00 )
+            {{address}}<br>
+            {{plz}} {{town}}
         </p>
-
-        <p>
-           {{plz}} {{town}}
-        </p>
-
 
         <div ref="map" class="map"></div>
 
+        <pre>{{description}}</pre>
 
     </div>
 </template>
@@ -29,18 +32,17 @@
     export default {
         name: "KkAssignmentDetails",
 
-        props: {
-            name: String,
-            date: Date,
-            description: String,
-            plz: String,
-            town: String,
-            lat: {
-                default: 48.137154
-            } ,
-            lon: {
-                default: 11.576124
-            }
+        data() {
+            return {
+                name: "Annette",
+                address: "Hofangerstr. 21",
+                date: Date.now(),
+                description: "- eine Tüte Chips\n- 700t Klopapier\nbringen Sie ne Grapfruit mit wenns die gibt, BIO bitte",
+                plz: "81735",
+                town: "München",
+                lat: 48.109136,
+                lon: 11.627320
+            };
         },
 
         mounted() {
@@ -58,11 +60,34 @@
 </script>
 
 <style scoped lang="scss">
-
+    @import "@/components/Branding.scss";
     @import "~leaflet/dist/leaflet.css";
+
+    p, h2, h1 {
+        margin: 5px $generalmargin;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 
     .map {
         height: 200px;
+    }
+
+    pre {
+        margin-top: $generalmargin;
+        font-family: $family-primary;
+        background: $primary-background;
+    }
+
+    .leftright {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            text-align: right;
+        }
     }
 
 </style>
