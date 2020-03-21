@@ -5,8 +5,8 @@
                 <span>Mega-schön</span> dich wiederzusehen!
             </div>
             <div class="form">
-                <b-field class="email" label="E-Mail">
-                    <b-input></b-input>
+                <b-field class="phone" label="Telefon">
+                    <b-input type="number"></b-input>
                 </b-field>
                 <b-field class="password" label="Passwort">
                     <b-input type="password"></b-input>
@@ -15,8 +15,8 @@
             </div>
         </div>
         <p>
-            Du hast bereits einen Account? Dann
-            <a href="/login">logge dich hier ein.</a>
+            Du hast dein Passwort vergessen? Dann
+            <router-link to="forgot-password">hier clicken.</router-link>
         </p>
     </div>
 </template>
