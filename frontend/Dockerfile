@@ -8,6 +8,8 @@ WORKDIR /app
 COPY *.json ./
 RUN npm install
 
+RUN npm install -g @vue/cli
+COPY . /app
 # Build the WebApp
 RUN npm run build
 
