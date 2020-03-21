@@ -11,6 +11,7 @@ import KkSearch from "../views/KkSearch.vue";
 import KkOffer from "../views/KkOffer.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
+import KkHelpNeededSignup from "../views/KkHelpNeededSignup.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
 		path: "/menu",
 		name: "Menu",
 		component: KkMenu
+	},
+	{
+		path: "/help-needed-signup",
+		name: "Help needed signup",
+		component: KkHelpNeededSignup
 	},
 	{
 		path: "/dashboard",
