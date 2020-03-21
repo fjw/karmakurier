@@ -11,7 +11,7 @@
                 <b-field class="password" label="Passwort">
                     <b-input type="password"></b-input>
                 </b-field>
-                <b-button class="btn" type="is-blue">Jetzt anmelden</b-button>
+                <b-button class="btn" type="is-blue" @click="login()">Jetzt anmelden</b-button>
             </div>
         </div>
         <p>
@@ -22,7 +22,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        login() {
+            this.$router.push("/dashboard");
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
