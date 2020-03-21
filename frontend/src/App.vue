@@ -1,18 +1,11 @@
 <template>
   <div id="app" class="container">
-    <Navigation />
     <router-view />
   </div>
 </template>
 
 <script>
-import Navigation from "@/components/organisms/KkNavigation.vue";
-
-export default {
-  components: {
-    Navigation
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -20,9 +13,10 @@ export default {
 
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 #app {
-  // padding: 1rem 5rem;
+  min-height: 100%;
 }
 </style>
