@@ -1,15 +1,32 @@
 <template>
-    <div id="app">
-        <router-view />
-    </div>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
+@import "~bulma/sass/utilities/_all";
+
+$primary: #8c67ef;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+  "primary": (
+    $primary,
+    $primary-invert
+  )
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: black;
+  padding: 1rem 5rem;
 }
 </style>
