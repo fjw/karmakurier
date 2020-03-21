@@ -6,10 +6,18 @@
         <i class="fas fa-bars"></i>
         <div class="menu-items">
             <ul>
-                <li><router-link to="suche">suche</router-link></li>
-                <li><router-link to="biete">biete</router-link></li>
-                <li><router-link to="faq">faq</router-link></li>
-                <li><router-link to="kontakt">kontakt</router-link></li>
+                <li>
+                    <router-link to="suche">suche</router-link>
+                </li>
+                <li>
+                    <router-link to="biete">biete</router-link>
+                </li>
+                <li>
+                    <router-link to="faq">faq</router-link>
+                </li>
+                <li>
+                    <router-link to="kontakt">kontakt</router-link>
+                </li>
             </ul>
         </div>
     </nav>
@@ -63,9 +71,14 @@ export default {
         li {
             font-weight: 700;
             padding-left: 40px;
+            a {
+                color: $black;
+            }
             &:hover {
                 cursor: pointer;
-                color: $primary;
+                a {
+                    color: $primary;
+                }
             }
         }
     }

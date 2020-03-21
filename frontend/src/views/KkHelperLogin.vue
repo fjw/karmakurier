@@ -1,20 +1,22 @@
 <template>
     <div class="login-wrapper">
         <div class="form-wrapper">
-            <div class="title">Moin, moin</div>
+            <div class="title">
+                <span>Mega-schön</span> dich wiederzusehen!
+            </div>
             <div class="form">
-                <b-field label="E-Mail">
-                    <b-input></b-input>
+                <b-field class="phone" label="Telefon">
+                    <b-input type="number"></b-input>
                 </b-field>
-                <b-field label="Passwort">
+                <b-field class="password" label="Passwort">
                     <b-input type="password"></b-input>
                 </b-field>
-                <b-button type="is-primary">Einloggen</b-button>
+                <b-button class="btn" type="is-blue">Jetzt anmelden</b-button>
             </div>
         </div>
         <p>
-            Noch kein Account? Dann
-            <a href="/signup">registriere dich jetzt hier.</a>
+            Du hast dein Passwort vergessen? Dann
+            <router-link to="forgot-password">hier clicken.</router-link>
         </p>
     </div>
 </template>
@@ -31,17 +33,25 @@ export default {};
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 64px 16px 64px 16px;
+    padding: 40px 16px 64px 16px;
 }
 
 .form-wrapper {
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0px 4px 8px rgba($primary, 0.24);
+    // box-shadow: 0px 4px 8px rgba($primary, 0.24);
     width: 100%;
     max-width: 320px;
+    @media only screen and (min-width: 560px) {
+        width: 100%;
+        max-width: 420px;
+    }
     .title {
-        background-color: $primary;
+        // background-color: $primary;
+        span {
+            font-weight: 700;
+            color: $blue;
+        }
         padding: 16px;
     }
     .form {
@@ -53,5 +63,10 @@ p {
     width: 100%;
     max-width: 320px;
     margin-top: 12px;
+    padding: 0px 16px;
+    @media only screen and (min-width: 560px) {
+        width: 100%;
+        max-width: 420px;
+    }
 }
 </style>
