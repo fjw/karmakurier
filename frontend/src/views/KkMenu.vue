@@ -1,7 +1,7 @@
 <template>
   <div>
-    <KkNavigation />
-    <h1>Landing page</h1>
+    <KkNavigation :inverted="true" />
+    <h1>Menu</h1>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import KkNavigation from "../components/organisms/KkNavigation.vue";
 
 export default {
-  name: "KkHome",
+  name: "KkMenu",
   components: {
     KkNavigation
   }

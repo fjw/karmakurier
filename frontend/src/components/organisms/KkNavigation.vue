@@ -1,12 +1,13 @@
 <template>
-  <nav class="navigation">
-    <a class="menu">
+  <nav class="navigation" :class="{inverted: inverted }">
+    <router-link to="/menu" class="menu">
       <i class="fas fa-bars"></i>
-    </a>
+    </router-link>
 
     <div class="logo">
       <router-link to="/">
-        <img src="@/assets/logo.svg" alt="Karmakurier Logo" />
+        <img v-if="!inverted" src="@/assets/logo.svg" alt="Karmakurier Logo" />
+        <img v-if="inverted" src="@/assets/logo_inverted.svg" alt="Karmakurier Logo" />
       </router-link>
     </div>
 
@@ -20,16 +21,24 @@
 
 <script>
 export default {
-  name: "KkNavigation"
+  name: "KkNavigation",
+  props: {
+    inverted: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../Branding.scss";
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem;
 }
 
 .menu,
@@ -39,5 +48,13 @@ export default {
 
 .logo img {
   width: 10rem;
+}
+
+.inverted {
+  background-color: $primary;
+  color: $secondary;
+  a {
+    color: $secondary;
+  }
 }
 </style>
