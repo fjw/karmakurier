@@ -54,11 +54,11 @@ services:
     networks:
       - coronakarma-network
 
-#  adminer:
-#    image: adminer:4.7
-#    restart: always
-#    ports:
-#      - 8080:8080
+  adminer:
+    image: adminer:4.7
+    restart: always
+    ports:
+      - 8080:8080
 
 networks:
   coronakarma-network:
