@@ -1,7 +1,14 @@
 <template>
-  <div>
+  <div class="wrapper">
     <KkNavigation :inverted="true" />
-    <h1>Menu</h1>
+    <main>
+      <b-menu>
+        <b-menu-list>
+          <b-menu-item label="Home"></b-menu-item>
+          <b-menu-item label="Dashboard"></b-menu-item>
+        </b-menu-list>
+      </b-menu>
+    </main>
   </div>
 </template>
 
@@ -15,3 +22,19 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../components/Branding.scss";
+
+main {
+  background-color: $primary;
+  flex: 1 1 0;
+  font-size: 200%;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+</style>

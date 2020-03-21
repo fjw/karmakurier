@@ -13,9 +13,10 @@ export default {};
 
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 #app {
-  // padding: 1rem 5rem;
+  min-height: 100%;
 }
 </style>
