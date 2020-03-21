@@ -11,14 +11,15 @@
   "dependencies": {
     "buefy": "^0.8.13",
     "core-js": "^3.6.4",
+    "date-fns": "^2.11.0",
+    "leaflet": "^1.6.0",
+    "leaflet-providers": "^1.9.1",
     "lodash.debounce": "^4.0.8",
     "register-service-worker": "^1.6.2",
     "swagger-client": "^3.10.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
-    "vuex": "^3.1.2",
-    "leaflet": "^1.6.0",
-    "leaflet-providers": "^1.9.1"
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -33,6 +34,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "faker": "^4.1.0",
+    "miragejs": "^0.1.35",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
