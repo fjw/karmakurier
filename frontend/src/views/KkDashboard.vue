@@ -28,17 +28,24 @@
             class
             v-for="assignment in visibleassignments"
             :key="assignment.id"
+            :id="assignment.id"
             :name="assignment.name"
             :date="assignment.date"
             :description="assignment.description"
             :town="assignment.town"
             :plz="assignment.plz"
         ></kk-assignment>
+
+        <p v-show="loading">
+            Aufträge werden über API-Call geholt...
+        </p>
     </div>
 </template>
 
 <script>
 import KkAssignment from "./KkAssignment";
+import api from "../api";
+import debounce from "lodash.debounce";
 
 export default {
     components: { KkAssignment },
@@ -72,14 +79,16 @@ export default {
                     description:
                         "Ich brauche nur diese einen Kornflakes. Die mit dem Affen auf der Verpackung. Bitte 4 Packungen."
                 }
-            ]
+            ],
+
+            // API client.
+            client: null,
+
+            // Loading state.
+            loading: false
         };
     },
-    methods: {
-        signup() {
-            this.$router.push("/einloggen");
-        }
-    },
+
     computed: {
         visibleassignments() {
             return this.assignments.filter(
@@ -88,6 +97,49 @@ export default {
                     this.plzfilter !== ""
             );
         }
+    },
+
+    watch: {
+        /**
+         * Watch user input with debounce to not call API too often.
+         */
+        plzfilter: debounce(function () {
+            this.fetchAssignmentsForZip()
+        }, 750)
+    },
+
+    methods: {
+        signup() {
+            this.$router.push("/einloggen");
+        },
+
+        /**
+         * Fetch assignments for currently entered ZIP code.
+         */
+        fetchAssignmentsForZip() {
+            // Set loading state.
+            this.loading = true;
+
+            // Make API call.
+            this.client.apis.default.get_orders__zipCode_({ zipCode: this.plzfilter })
+                .then(response => {
+                    // @todo Handle response
+                    console.log(response);
+                })
+                .catch(error => {
+                    // @todo Handle error?
+                    console.error(error);
+                })
+                .finally(() => {
+                    // Unset loading state.
+                    this.loading = false;
+                });
+        }
+    },
+
+    async created() {
+        // Fetch API client and store locally.
+        this.client = await api;
     }
 };
 </script>
