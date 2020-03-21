@@ -1,0 +1,122 @@
+swagger: '2.0'
+info:
+  description: ''
+  version: 1.0.0
+  title: CoronaKarma REST API
+schemes:
+  - https
+paths:
+  '/paymentmethods':
+    get:
+      summary: List payment methods
+      description: 'Query available payment methods'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PaymentMethod'
+  '/orders':
+    post:
+      summary: 'Post a new shopping order'
+      description: ''
+      operationId: 'postOrder'
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: 'Order object to be added'
+          required: true
+          schema:
+            $ref: '#/definitions/Order'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/Order'
+  '/orders/{zipCode}':
+    get:
+      summary: List orders for zip code
+      description: 'List orders for zip code'
+      produces:
+        - application/json
+      parameters:
+        - name: zipCode
+          in: path
+          description: 'The zip code for which the order was placed'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Order'
+
+definitions:
+  PaymentMethod:
+    type: object
+    description: 'A specific method of payment (e.g. cash or paypal)'
+    properties:
+      id:
+        type: string
+        description: 'Payment method id'
+        example: 'cash'
+  Person:
+    type: object
+    description: 'A person'
+    properties:
+      id:
+        type: string
+        description: 'technical id of the person'
+      firstName:
+        type: string
+      lastName:
+        type: string
+      zipCode:
+        type: string
+      city:
+        type: string
+      streetAddress:
+        type: string
+      phoneNumber:
+        type: string
+  ShoppingHabit:
+    type: object
+    description: 'The shopping habit for an order (e.g. premium or budget)'
+    properties:
+      id:
+        type: string
+        description: 'technical id of the order type (e.g premium)'
+      instructions:
+        type: string
+        description: 'instructions for the shopper'
+  Order:
+    type: object
+    description: 'A shopping order'
+    properties:
+      id:
+        type: string
+        description: 'technical order id'
+      paymentMethod:
+        $ref: '#/definitions/PaymentMethod'
+      issuer:
+        $ref: '#/definitions/Person'
+      shoppingHabit:
+        $ref: '#/definitions/ShoppingHabit'
+      maximumAmount:
+        type: number
+        description: 'Maximum amount to pay.'
+      shoppingList:
+        type: string
+        description: 'The shopping list'
+      
+  
+
