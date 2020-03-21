@@ -1,0 +1,35 @@
+version: '3'
+ 
+services:
+ 
+  db:
+    image: postgres:12.2-alpine
+    container_name: coronakarma-mongodb
+    restart: always
+    ports:
+      - "5432"
+    environment:
+      - POSTGRES_USER: postgres
+      - POSTGRES_PASSWORD:
+    volumes:
+      - /some/path/db-data:/var/lib/postgresql/data
+    networks:
+      - coronakarma-network
+
+  adminer:
+    image: adminer:4.7
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    networks:
+      - coronakarma-network
+
+networks:
+  coronakarma-network:
+    driver: bridge
+volumes:
+  db-data:
+volumes:
+  nodered-data:
