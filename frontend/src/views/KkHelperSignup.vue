@@ -43,7 +43,7 @@
                 <b-field class="privacy" label="Datenschutz">
                     <b-checkbox>Ja, ich habe die Datenschutzerklärung gelesen und stimme dieser zu.</b-checkbox>
                 </b-field>
-                <b-button class="btn" type="is-blue">Jetzt registrieren</b-button>
+                <b-button class="btn" type="is-blue" @click="signup()">Jetzt registrieren</b-button>
             </div>
         </div>
         <p>
@@ -54,7 +54,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        signup() {
+            this.$router.push("/einloggen");
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>

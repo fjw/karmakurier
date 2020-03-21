@@ -49,7 +49,7 @@ const routes = [
 		component: KkThankYou
 	},
 	{
-		path: "/login",
+		path: "/einloggen",
 		name: "HelperLogin",
 		component: KkHelperLogin
 	},
