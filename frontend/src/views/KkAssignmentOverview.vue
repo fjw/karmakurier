@@ -37,7 +37,7 @@
         components: {KkAssignment},
         data() {
             return {
-                plzfilter: "",
+                plzfilter: "81735",
                 assignments: [
 
                     {
@@ -58,7 +58,7 @@
                     },
                     {
                         id: 3,
-                        plz: "81373",
+                        plz: "81735",
                         town: "München",
                         time: Date.now(),
                         name: "Hannelore",

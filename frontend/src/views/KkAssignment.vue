@@ -28,7 +28,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a class="card-footer-item">Jetzt helfen!</a>
+                <router-link class="card-footer-item" to="/foo">Jetzt helfen!</router-link>
             </footer>
         </b-collapse>
 
