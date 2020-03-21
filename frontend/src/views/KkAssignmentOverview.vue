@@ -102,6 +102,7 @@
                 // Set loading state.
                 this.loading = true;
 
+                /*
                 // Make API call.
                 this.client.apis.default.get_orders__zipCode_({ zipCode: this.plzfilter })
                     .then(response => {
@@ -116,6 +117,8 @@
                         // Unset loading state.
                         this.loading = false;
                     });
+                    */
+
             }
         },
 
