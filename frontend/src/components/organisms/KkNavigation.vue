@@ -1,7 +1,10 @@
 <template>
     <nav class="navigation normalize-width">
         <div class="logo" @click="$router.push('/')">
-            <img src="@/assets/logo.svg" alt="Karmakurier Logo" />
+            <!-- <img src="@/assets/logo.svg" alt="Karmakurier Logo" /> -->
+            <video autoplay muted>
+                <source src="@/assets/logo_animated.mp4" type="video/mp4" />
+            </video>
         </div>
         <i class="fas fa-bars"></i>
         <div class="menu-items">
@@ -46,6 +49,10 @@ export default {
 
 .logo img {
     width: 7rem;
+}
+
+.logo video {
+    width: 14rem;
 }
 
 .fas {

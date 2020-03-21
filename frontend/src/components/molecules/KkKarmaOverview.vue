@@ -41,12 +41,25 @@ export default {
     position: absolute;
     height: 10px;
     width: 10px;
-    background-color: white;
+    background-color: rgba(white, 0.4);
     border-radius: 100%;
-    box-shadow: 0px 0px 8px 0px rgba(white, 0.75);
+    box-shadow: 0px 0px 8px 0px rgba(#c3c3ff, 0.75);
+    &::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: rgba(white, 0.8);
+        box-shadow: 0px 0px 8px 0px rgba(#c3c3ff, 0.75);
+        top: 3px;
+        left: 3px;
+    }
 }
 
 .title {
+    z-index: 1;
     color: white;
+    text-shadow: 0px 0px 8px rgba($black, 1);
 }
 </style>
