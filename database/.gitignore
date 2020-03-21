@@ -1,0 +1,10 @@
+.git/*
+.bundle/*
+log/
+tmp/
+node_modules
+dist
+
+Dockerfile
+README.md
+.env
