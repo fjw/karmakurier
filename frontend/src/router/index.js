@@ -8,8 +8,6 @@ import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkThankYou from "../views/KkThankYou.vue";
 import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkHelperSignup from "../views/KkHelperSignup.vue";
-import KkSearch from "../views/KkSearch.vue";
-import KkOffer from "../views/KkOffer.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 
@@ -57,16 +55,6 @@ const routes = [
 		path: "/moechte-helfen",
 		name: "HelperSignup",
 		component: KkHelperSignup
-	},
-	{
-		path: "/suche",
-		name: "HelperSearch",
-		component: KkSearch
-	},
-	{
-		path: "/biete",
-		name: "HelperOffer",
-		component: KkOffer
 	},
 	{
 		path: "/faq",
