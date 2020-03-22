@@ -1,5 +1,12 @@
 <template>
     <div id="app">
+        <div class="demo normalize-width">
+            Achtung Prototyp. Beliebige Zugangsdaten können verwendet werden. Bitte liked und teilt
+            <a
+                href="https://www.youtube.com/watch?v=6Kr9JdEWCt8"
+                target="_blank"
+            >unser Video auf Youtube.</a>
+        </div>
         <template v-if="$route.name !== 'HelperDashboard'">
             <KkPublicNavigation v-if="isLoggedIn === false" />
             <KkUserNavigation v-else-if="isLoggedIn === true" />
@@ -37,6 +44,7 @@ body {
 }
 
 #app {
+    margin-top: 8px;
     min-height: 100%;
 }
 
@@ -48,5 +56,13 @@ body {
     @media only screen and (min-width: 512px) {
         padding: 0.75rem 3rem 0.75rem 3rem;
     }
+}
+
+.demo {
+    border: solid 3px $primary;
+    border-radius: 8px;
+    // padding: 8px;
+    margin: auto;
+    font-weight: 700;
 }
 </style>
