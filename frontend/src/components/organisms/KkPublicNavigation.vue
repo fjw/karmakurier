@@ -14,16 +14,13 @@
         <div class="menu-items">
             <ul>
                 <li>
-                    <router-link to="/suche-hilfe">suche</router-link>
+                    <router-link to="faq">Wie es funktioniert & FAQ</router-link>
                 </li>
                 <li>
-                    <router-link to="/moechte-helfen">biete</router-link>
+                    <router-link to="einloggen">Helfer Login</router-link>
                 </li>
                 <li>
-                    <router-link to="faq">faq</router-link>
-                </li>
-                <li class="helper-login">
-                    <router-link to="einloggen">helfer login</router-link>
+                    <router-link to="regestrieren">Als Helfer registrieren</router-link>
                 </li>
             </ul>
         </div>
@@ -40,10 +37,11 @@
             </div>
             <div class="items normalize-width">
                 <ul>
-                    <li @click="$router.push('/suche-hilfe'); expandMenu = false">suche</li>
-                    <li @click="$router.push('/moechte-helfen'); expandMenu = false">biete</li>
-                    <li @click="$router.push('/faq'); expandMenu = false">faq</li>
-                    <li @click="$router.push('/einloggen'); expandMenu = false">helfer login</li>
+                    <li @click="$router.push('/faq'); expandMenu = false">Wie es funktioniert & FAQ</li>
+                    <li @click="$router.push('/einloggen'); expandMenu = false">Helfer Login</li>
+                    <li
+                        @click="$router.push('/regestrieren'); expandMenu = false"
+                    >Als Helfer registrieren</li>
                 </ul>
             </div>
         </div>
