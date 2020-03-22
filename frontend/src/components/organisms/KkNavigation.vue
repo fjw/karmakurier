@@ -70,6 +70,10 @@ export default {
     align-items: center;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .logo img {
     width: 7rem;
 }
