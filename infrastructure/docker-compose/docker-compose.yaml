@@ -41,51 +41,40 @@ services:
 #      - coronakarma-network
     #command: ./wait-for.sh db:5432 -- npm start
  
-  db:
-    build:
-      context: ../../database
-      dockerfile: Dockerfile
-    image: coronakarma-db:1.0
-    container_name: coronakarma-postgres
-    restart: always
-#    ports:
-#      - "5432"
-    env_file:
-      - ../../database/.env
-    volumes:
-      - /var/postgres:/var/lib/postgresql/data
-    networks:
-      - coronakarma-network
-
-
-  backend:
-    build:
-      context: ../../backend
-      dockerfile: Dockerfile
-    image: coronakarma-backend:1.0
-    container_name: coronakarma-backend
-    restart: always
-    ports:
-      - "8098:8080"
-    env_file:
-      - ../../backend/.env
-    networks:
-      - coronakarma-network
-
-
-
-#  postgrest:
+#  db:
 #    build:
-#      context: ../../database/postgrest
+#      context: ../../database
 #      dockerfile: Dockerfile
+#    image: coronakarma-db:1.0
+#    container_name: coronakarma-postgres
+#    restart: always
+##    ports:
+##      - "5432"
+#    env_file:
+#      - ../../database/.env
+#    volumes:
+#      - /var/postgres:/var/lib/postgresql/data
+#    networks:
+#      - coronakarma-network
+
+
+#  backend:
+#    build:
+#      context: ../../backend
+#      dockerfile: Dockerfile
+#    image: coronakarma-backend:1.0
+#    container_name: coronakarma-backend
+#    restart: always
 #    ports:
-#      - "3000:3000"
-#    depends_on:
-#      - db
-#    environment:
-#      - PGRST_DB_URI=
-#      - PGRST_DB_SCHEMA=
-#      - PGRST_DB_ANON_ROLE=
+#      - "8098:8080"
+#    env_file:
+#      - ../../backend/.env
+#    networks:
+#      - coronakarma-network
+
+
+
+
 
 
   adminer:
