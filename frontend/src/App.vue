@@ -2,15 +2,18 @@
     <div id="app">
         <KkNavigation />
         <router-view />
+        <KkFooter />
     </div>
 </template>
 
 <script>
 import KkNavigation from "@/components/organisms/KkNavigation.vue";
+import KkFooter from "@/components/organisms/KkFooter.vue";
 
 export default {
     components: {
-        KkNavigation
+        KkNavigation,
+        KkFooter
     }
 };
 </script>
