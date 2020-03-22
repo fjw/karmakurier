@@ -1,10 +1,10 @@
 package com.coronakarma.backend.common;
 
-import com.coronakarma.backend.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class PersonController {
     @GetMapping("/persons/{personId}")
     public Person getPerson(@PathVariable Long personId) {
         return personRepository.findById(personId)
-                .orElseThrow(() -> new ResourceNotFoundException("Person with id " + personId + " not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Person with id " + personId + " not found"));
     }
 
     @PutMapping("/persons/{personId}")
@@ -49,7 +49,7 @@ public class PersonController {
             person.setCity(personRequest.getCity());
             person.setPhoneNumber(personRequest.getPhoneNumber());
             return personRepository.save(person);
-        }).orElseThrow(() -> new ResourceNotFoundException("Person with id " + personId + " not found"));
+        }).orElseThrow(() -> new EntityNotFoundException("Person with id " + personId + " not found"));
     }
 
     @DeleteMapping("/persons/{personId}")
@@ -57,6 +57,6 @@ public class PersonController {
         return personRepository.findById(personId).map(person -> {
             personRepository.delete(person);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("Person with id " + personId + " not found"));
+        }).orElseThrow(() -> new EntityNotFoundException("Person with id " + personId + " not found"));
     }
 }

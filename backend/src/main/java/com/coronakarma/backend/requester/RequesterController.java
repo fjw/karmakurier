@@ -1,10 +1,10 @@
 package com.coronakarma.backend.requester;
 
-import com.coronakarma.backend.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class RequesterController {
     @GetMapping("/requesters/{requesterId}")
     public Requester getRequester(@PathVariable Long requesterId) {
         return requesterRepository.findById(requesterId)
-                .orElseThrow(() -> new ResourceNotFoundException("Requester with id " + requesterId + " not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Requester with id " + requesterId + " not found"));
     }
 
     @PutMapping("/requesters/{requesterId}")
@@ -48,7 +48,7 @@ public class RequesterController {
             requester.setPremium(requesterRequest.getPremium());
             requester.setMaxAmount(requesterRequest.getMaxAmount());
             return requesterRepository.save(requester);
-        }).orElseThrow(() -> new ResourceNotFoundException("Requester with id " + requesterId + " not found"));
+        }).orElseThrow(() -> new EntityNotFoundException("Requester with id " + requesterId + " not found"));
     }
 
     @DeleteMapping("/requesters/{requesterId}")
@@ -56,6 +56,6 @@ public class RequesterController {
         return requesterRepository.findById(requesterId).map(requester -> {
             requesterRepository.delete(requester);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("Requester with id " + requesterId + " not found"));
+        }).orElseThrow(() -> new EntityNotFoundException("Requester with id " + requesterId + " not found"));
     }
 }
