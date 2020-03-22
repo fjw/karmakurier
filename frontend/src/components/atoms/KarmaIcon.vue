@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted() {
-        this.animateValue(64, 5000);
+        this.animateValue(36, 3000);
     }
 };
 </script>
