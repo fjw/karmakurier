@@ -36,7 +36,7 @@ public class CoronaKarmaController {
 
 	@GetMapping("/location/{postalCode}/persons/")
 	public List<Person> getPersonsByPostalCode(@PathVariable String postalCode) {
-		return personRepository.findAllByPostalCode(postalCode);
+		return personRepository.findAllByPostalCodeContaining(postalCode);
 	}
 
 	@GetMapping("/persons")
@@ -78,7 +78,7 @@ public class CoronaKarmaController {
 
 	@GetMapping("/location/{postalCode}/requesters/")
 	public List<Requester> getRequestersByPostalCode(@PathVariable String postalCode) {
-		return requesterRepository.findAllByPersonPostalCode(postalCode);
+		return requesterRepository.findAllByPersonPostalCodeContaining(postalCode);
 	}
 
 	@GetMapping("/requesters")
@@ -119,7 +119,7 @@ public class CoronaKarmaController {
 
 	@GetMapping("/location/{postalCode}/supporters/")
 	public List<Supporter> getSupportersByPostalCode(@PathVariable String postalCode) {
-		return supporterRepository.findAllByPersonPostalCode(postalCode);
+		return supporterRepository.findAllByPersonPostalCodeContaining(postalCode);
 	}
 
 	@GetMapping("/supporters")
