@@ -1,7 +1,9 @@
 <template>
     <div id="app">
-        <KkPublicNavigation v-if="isLoggedIn === false" />
-        <KkUserNavigation v-else-if="isLoggedIn === true" />
+        <template v-if="$route.name !== 'HelperDashboard'">
+            <KkPublicNavigation v-if="isLoggedIn === false" />
+            <KkUserNavigation v-else-if="isLoggedIn === true" />
+        </template>
         <router-view />
         <KkFooter />
     </div>

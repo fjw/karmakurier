@@ -12,6 +12,7 @@ import KkSearchHelp from "../views/KkSearchHelp.vue";
 import KkAssignmentSearchView from "../views/KkAssignmentSearchView.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
+import KkHelperDashboard from "../views/KkHelperDashboard.vue";
 
 // User Routes
 import KkDashboard from "../views/KkDashboard.vue";
@@ -37,6 +38,12 @@ const routes = [
 		name: "Dashboard",
 		component: KkDashboard
 	},
+    {
+        path: "/helperdashboard",
+        name: "HelperDashboard",
+        component: KkHelperDashboard,
+        nonavigation: true
+    },
 	{
 		path: "/mein-profil",
 		name: "MyProfile",
