@@ -1,7 +1,7 @@
 <template>
     <div class="home-wrapper normalize-width">
         <div class="stage">
-            <h1 class="title">willkommen bei karmakurier.</h1>
+            <h1 class="title"><span>karmakurier.</span> füreinander. miteinander.</h1>
             <p
                 class="subtitle"
             >Wir bringen Hilfesuchende und Helfende aus Ihrer Umgebung schnell, unmittelbar und einfach zusammen.</p>
@@ -73,7 +73,7 @@ export default {
 .stage {
     margin: auto;
     width: 100%;
-    max-width: 512px;
+    max-width: 600px;
     text-align: center;
 }
 
