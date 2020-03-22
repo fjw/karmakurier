@@ -1,6 +1,7 @@
 <template>
     <div class="dashboard-wrapper">
         <KkKarmaOverview />
+
         <div class="normalize-width">
             <KkTaskList />
         </div>
