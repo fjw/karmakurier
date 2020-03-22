@@ -8,7 +8,7 @@ import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
-import KkAssignmentSearch from "../views/KkAssignmentSearch.vue";
+import KkAssignmentSearchView from "../views/KkAssignmentSearchView.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 
 // User Routes
@@ -58,7 +58,7 @@ const routes = [
 	{
 		path: "/moechte-helfen",
 		name: "AssignmentSerach",
-		component: KkAssignmentSearch
+		component: KkAssignmentSearchView
 	},
 	{
 		path: "/faq",

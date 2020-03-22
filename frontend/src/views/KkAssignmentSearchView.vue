@@ -8,7 +8,7 @@
 import KkTaskList from "../components/organisms/KkTaskList.vue";
 
 export default {
-  name: "KkAssignmentSearch",
+  name: "KkAssignmentSearchView",
   components: {
     KkTaskList
   }
