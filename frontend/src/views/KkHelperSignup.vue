@@ -19,55 +19,169 @@
             <p>Anschließend füllen du dein Karmakonto durch gute Taten auf und kannst diese jederzeit bei unseren Karma-Partnern einlösen.</p>
             <p></p>
 
-            <div class="form">
-                <b-field class="firstname" label="Vorname">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="lastname" label="Nachname">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="street" label="Straße">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="zip" label="PLZ">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="city" label="Stadt">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="email" label="E-Mail">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="phone" label="Telefon">
-                    <b-input></b-input>
-                </b-field>
-                <b-field class="password" label="Passwort">
-                    <b-input type="password"></b-input>
-                </b-field>
-                <b-field class="confirm-password" label="Passwort wiederholen">
-                    <b-input type="password"></b-input>
-                </b-field>
+            <ValidationObserver v-slot="{ handleSubmit }">
+                <div class="form">
+                    <ValidationProvider
+                        name="Vorname"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="firstname"
+                    >
+                        <b-field
+                            label="Vorname"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.firstName"></b-input>
+                        </b-field>
+                    </ValidationProvider>
 
-                <b-field class="mobility" label="Ich habe ein:">
-                    <div>
-                        <b-checkbox>Auto</b-checkbox>
-                        <b-checkbox>Fahrrad</b-checkbox>
-                    </div>
-                </b-field>
+                    <ValidationProvider
+                        name="Nachname"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="lastname"
+                    >
+                        <b-field
+                            label="Nachname"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.lastName"></b-input>
+                        </b-field>
+                    </ValidationProvider>
 
-                <b-field class="privacy" label="Datenschutz">
-                    <b-checkbox
+                    <ValidationProvider
+                        name="Straße und HausNr"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="street"
+                    >
+                        <b-field
+                            label="Straße und HausNr"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.street"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="PLZ"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="zip"
+                    >
+                        <b-field
+                            label="PLZ"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.zip"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="Stadt"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="city"
+                    >
+                        <b-field
+                            label="Stadt"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.city"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="E-Mail"
+                        rules="required|email"
+                        v-slot="{ errors, valid }"
+                        class="email"
+                    >
+                        <b-field
+                            label="E-Mail"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.email"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="Telefon"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="phone"
+                    >
+                        <b-field
+                            label="Telefon"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="signUpData.phone"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="Passwort"
+                        rules="required|min:8"
+                        v-slot="{ errors, valid }"
+                        class="password"
+                    >
+                        <b-field
+                            label="Passwort"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input type="password" v-model="signUpData.password"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <b-field
+                        class="confirm-password"
+                        label="Passwort wiederholen"
+                        :message="signUpData.password != signUpData.confirmedPassword ? 'Passwörter stimmen nicht überein.':''"
+                    >
+                        <b-input type="password" v-model="signUpData.confirmedPassword"></b-input>
+                    </b-field>
+
+                    <b-field class="mobility" label="Ich habe ein:">
+                        <div>
+                            <b-checkbox v-model="signUpData.hasCar">Auto</b-checkbox>
+                            <b-checkbox v-model="signUpData.hasBicycle">Fahrrad</b-checkbox>
+                        </div>
+                    </b-field>
+
+                    <ValidationProvider
+                        name="Datenschutz"
+                        rules="required"
+                        v-slot="{ errors, valid }"
+                        class="privacy"
+                    >
+                        <b-field
+                            label="Datenschutz"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-checkbox
+                                v-model="dataPrivacy"
+                            >Ich bin damit einverstanden, dass karmakurier die von mir im vorstehenden Formular angegebenen personenbezogenen Daten für den Zweck der Kontaktaufnahme verarbeitet. Eine Weitergabe an Dritte findet nicht statt, es sei denn es wird ausdrücklich darauf hingewiesen. Unsere Datenschutzerklärung mit sämtlichen Informationen gemäß Art 13 DSGVO zur Datenverarbeitung durch karmakurier und zu Ihren Rechten können Sie unter Datenschutzerklärung einsehen. Den Datenschutzbeauftragten von karmakurier erreichen Sie unter info@karmakurier.de.</b-checkbox>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <b-button
+                        class="btn"
+                        type="is-blue"
+                        @click="handleSubmit(signup)"
                         v-model="dataPrivacy"
-                    >Ich bin damit einverstanden, dass karmakurier die von mir im vorstehenden Formular angegebenen personenbezogenen Daten für den Zweck der Kontaktaufnahme verarbeitet. Eine Weitergabe an Dritte findet nicht statt, es sei denn es wird ausdrücklich darauf hingewiesen. Unsere Datenschutzerklärung mit sämtlichen Informationen gemäß Art 13 DSGVO zur Datenverarbeitung durch karmakurier und zu Ihren Rechten können Sie unter Datenschutzerklärung einsehen. Den Datenschutzbeauftragten von karmakurier erreichen Sie unter info@karmakurier.de.</b-checkbox>
-                </b-field>
-                <b-button
-                    class="btn"
-                    type="is-blue"
-                    @click="signup()"
-                    v-model="dataPrivacy"
-                    :disabled="!dataPrivacy"
-                >Jetzt registrieren</b-button>
-            </div>
+                        :disabled="!dataPrivacy"
+                    >Jetzt registrieren</b-button>
+                </div>
+            </ValidationObserver>
         </div>
         <p>
             Du hast bereits einen Account? Dann
@@ -80,11 +194,25 @@
 export default {
     data() {
         return {
-            dataPrivacy: false
+            dataPrivacy: false,
+            signUpData: {
+                firstName: "",
+                lastName: "",
+                street: "",
+                zip: "",
+                city: "",
+                email: "",
+                phone: "",
+                hasCar: "",
+                hasBicycle: "",
+                password: "",
+                confirmedPassword: ""
+            }
         };
     },
     methods: {
         signup() {
+            this.$store.dispatch("signUp", this.signUpData);
             this.$router.push("/einloggen");
         }
     }
