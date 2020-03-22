@@ -12,19 +12,33 @@
                     src="@/assets/illustrations/karmakurier_illustration_01.png"
                     alt="brauche hilfe bild"
                 />
-                <div
-                    class="custom-button orange"
-                    @click="$router.push('/suche-hilfe')"
-                >Ich brauche Hilfe</div>
+                <div class="custom-button-wrap">
+
+                    <div
+                        class="custom-button orange"
+                        @click="$router.push('/suche-hilfe')"
+                    >Ich brauche Hilfe</div>
+                    <div class="custom-button-text">
+                        Wir verbinden Sie via Telefon oder online mit potentiellen Helfern aus Ihrer Nähe.
+                        <div>
+                            <a>+48 732 10 00 73</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="middle">
                 <img src="@/assets/illustrations/arrow.png" alt="pfeil bild" />
             </div>
             <div class="cta">
-                <div
-                    class="custom-button blue"
-                    @click="$router.push('/moechte-helfen')"
-                >Ich möchte helfen</div>
+                <div class="custom-button-wrap">
+                    <div
+                        class="custom-button blue"
+                        @click="$router.push('/moechte-helfen')"
+                    >Ich möchte helfen</div>
+                    <div class="custom-button-text">
+                        Helfen Sie in Ihrer Nachbarschaft und verdienen Sie Anerkennung.
+                    </div>
+                </div>
                 <img
                     src="@/assets/illustrations/karmakurier_illustration_02.png"
                     alt="kann helfen bild"
@@ -119,10 +133,11 @@ export default {
 }
 
 .custom-button.orange {
+    max-width: 220px;
+    margin-top: 25px;
     &::after {
         width: 130px;
         position: absolute;
-        content: "+48 732 10 00 73";
         background-color: white;
         border-radius: 1rem;
         padding: 2px 6px 2px 6px;
@@ -133,6 +148,16 @@ export default {
         box-shadow: 0 4px 8px rgba($primary, 0.24);
         border: 1px solid rgba($black, 0.16);
         color: $black;
+    }
+}
+
+.custom-button {
+    &-wrap {
+        position: relative;
+    }
+    &-text {
+        padding-top: 15px;
+        max-width: 220px;
     }
 }
 </style>
