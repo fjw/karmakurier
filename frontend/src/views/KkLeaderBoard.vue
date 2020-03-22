@@ -1,6 +1,13 @@
 <template>
     <div class="normalize-width">
         <KkKarmaHeader></KkKarmaHeader>
+
+        <div
+                class="custom-button orange"
+                @click="$router.push('/redeem')"
+        >Punkte einlösen</div>
+
+
         <div class="wrapper">
             <div class="title">
                 <span>Die tollste Helfer</span> in deiner Nähe!
@@ -92,7 +99,7 @@ export default {
             data: [
                 { place: 1, firstName: 'Sebastian', lastName: 'Klein', karmaPoints: 36 },
                 { place: 2, firstName: 'John', lastName: 'Jacobs', karmaPoints: 33 },
-                { place: 3, firstName: 'Tina', lastName: 'Gilbert', 'karmaPoints': 31 },
+                { place: 3, firstName: 'Tina', lastName: 'Gilbert', karmaPoints: 31 },
                 { place: 4, firstName: 'Clarence', lastName: 'Flores', karmaPoints: 27 },
                 { place: 5, firstName: 'Ralf', lastName: 'Mustermann', karmaPoints: 24 },
                 { place: 6, firstName: 'Sofie', lastName: 'Higins', karmaPoints: 22 },
@@ -163,4 +170,9 @@ export default {
         color: $white
     }
 }
+
+    .custom-button {
+        width: 200px;
+        margin: 0 auto 40px auto;
+    }
 </style>
