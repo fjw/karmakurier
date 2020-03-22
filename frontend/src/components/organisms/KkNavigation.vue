@@ -30,8 +30,8 @@
                 <li>
                     <router-link to="faq">faq</router-link>
                 </li>
-                <li>
-                    <router-link to="kontakt">kontakt</router-link>
+                <li class="helper-login">
+                    <router-link to="einloggen">helfer login</router-link>
                 </li>
             </ul>
         </div>
@@ -109,6 +109,11 @@ export default {
                 width: 48px;
                 height: 48px;
                 border-radius: 100%;
+            }
+            &.helper-login {
+                a {
+                    color: $blue;
+                }
             }
             &:hover {
                 cursor: pointer;
