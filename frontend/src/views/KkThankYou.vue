@@ -1,7 +1,20 @@
 <template>
     <div class="thank-you-wrapper">
         <div class="title">Vielen Dank!</div>
-        <div class="subtitle">Wie es weiter geht erklären wir Ihnen in dem folgenden Video.</div>
+        <div class="subtitle">Wir werden schnellstmöglich einen Helfer finden, der Kontakt zu Ihnen aufnimmt. Wir bitten um etwas Geduld, bis bald!</div>
+        <div class="subtitle">Tutorial für die kontaktlose Übergabe</div>
+        <div class="video">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/2k9MpD1gM14"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+        <br>
+        <div class="subtitle">Payment process & Karma-System</div>
         <div class="video">
             <iframe
                 width="560"
