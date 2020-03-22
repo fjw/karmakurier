@@ -12,6 +12,5 @@ yarn-error.log*
 .idea
 .vscode
 
-Dockerfile
 README.md
 .env
