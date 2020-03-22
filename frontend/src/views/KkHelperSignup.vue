@@ -58,7 +58,7 @@
                 <b-field class="privacy" label="Datenschutz">
                     <b-checkbox
                         v-model="dataPrivacy"
-                    >Ja, ich habe die Datenschutzerklärung gelesen und stimme dieser zu.</b-checkbox>
+                    >Ich bin damit einverstanden, dass karmakurier die von mir im vorstehenden Formular angegebenen personenbezogenen Daten für den Zweck der Kontaktaufnahme verarbeitet. Eine Weitergabe an Dritte findet nicht statt, es sei denn es wird ausdrücklich darauf hingewiesen. Unsere Datenschutzerklärung mit sämtlichen Informationen gemäß Art 13 DSGVO zur Datenverarbeitung durch karmakurier und zu Ihren Rechten können Sie unter Datenschutzerklärung einsehen. Den Datenschutzbeauftragten von karmakurier erreichen Sie unter info@karmakurier.de.</b-checkbox>
                 </b-field>
                 <b-button
                     class="btn"
