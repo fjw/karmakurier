@@ -1,45 +1,37 @@
 <template>
   <div :class="activated ? 'activated' : ''">
-    <div v-show="assignment">
-      <div class="title">
-        <template v-if="!activated">
-          <span>{{assignment.person.firstName}} {{assignment.person.lastName}}</span> hat eine Mission für dich!
-        </template>
-        <template v-if="activated">
-          <span>Du</span>
-          hast eine Mission für {{assignment.person.firstName}} {{assignment.person.lastName}}. Danke dafür!
-        </template>
-      </div>
-
-      <p>{{assignment.timeSince}}</p>
-
-      <pre class="address">
-  {{assignment.person.address}}
-  {{assignment.person.zipCode}} {{assignment.person.city}}
-      </pre>
-
-      <div ref="map" class="map"></div>
-
-      <div class="buttons">
-        <div v-if="isLoggedIn">
-          <template v-if="!activated">
-            <div class="custom-button blue" @click="activated = true">Mission annehmen!</div>
-          </template>
-          <template v-if="activated">
-            <div class="custom-button orange">Kontakt aufnehmen!</div>
-            <div
-              class="custom-button blue"
-              @click="$router.push('/dashboard');"
-            >Mission abschliessen!</div>
-          </template>
-        </div>
-        <div v-else>
-          <div class="custom-button blue" @click="logIn()">Mission annehmen</div>
-        </div>
-      </div>
+    <div class="title">
+      <template v-if="!activated">
+        <span>{{name}}</span> hat eine Mission für dich!
+      </template>
+      <template v-if="activated">
+        <span>Du</span>
+        hast eine Mission für {{name}}. Danke dafür!
+      </template>
     </div>
 
-    <b-loading :active="loading"></b-loading>
+    <p>vor 2 Minuten ( 22.03 14:00 )</p>
+
+    <pre class="address">
+{{address}}
+{{plz}} {{town}}</pre>
+
+    <div ref="map" class="map"></div>
+
+    <div class="buttons">
+      <div v-if="isLoggedIn">
+        <template v-if="!activated">
+          <div class="custom-button blue" @click="activated = true">Mission annehmen!</div>
+        </template>
+        <template v-if="activated">
+          <div class="custom-button orange">Kontakt aufnehmen!</div>
+          <div class="custom-button blue" @click="$router.push('/dashboard');">Mission abschliessen!</div>
+        </template>
+      </div>
+      <div v-else>
+        <div class="custom-button blue" @click="logIn()">Mission annehmen</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,73 +39,53 @@
 import L from "leaflet";
 import "leaflet-providers";
 import { mapState } from "vuex";
-import com from "../api/com";
 
 export default {
   name: "KkAssignmentDetails",
 
-  props: {
-    id: {
-      type: Number,
-      required: true
-    }
-  },
-
   data() {
     return {
-      loading: true,
-      assignment: null,
+      name: "Annette",
+      address: "Hofangerstr. 21",
+      date: Date.now(),
+      description:
+        "- eine Tüte Chips\n- 700t Klopapier\nbringen Sie ne Grapfruit mit wenns die gibt, BIO bitte",
+      plz: "81735",
+      town: "München",
+      lat: 48.109136,
+      lon: 11.62732,
       activated: false
     };
   },
 
-  computed: {
-    ...mapState(["isLoggedIn"])
-  },
-
-  watch: {
-    assignment(value) {
-      if (value !== null) {
-        window.setTimeout(() => this.initializeMap(value.person.lat, value.person.lon), 500);
-      }
-    }
-  },
+  computed: mapState(["isLoggedIn"]),
 
   methods: {
     logIn() {
       this.$router.push("/einloggen");
-    },
-
-    initializeMap(lat, lon) {
-      const map = L.map(this.$refs.map, {
-        center: [lat, lon],
-        zoom: 17
-      });
-
-      L.tileLayer.provider("Wikimedia").addTo(map);
-
-      const karmaicon = L.icon({
-        iconUrl: require("@/assets/illustrations/pin.png"),
-        shadowUrl: require("@/assets/illustrations/pin_shadow.png"),
-
-        iconSize: [100, 129], // size of the icon
-        shadowSize: [200, 110], // size of the shadow
-        iconAnchor: [50, 120], // point of the icon which will correspond to marker's location
-        shadowAnchor: [78, 95], // the same for the shadow
-        popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
-      });
-
-      L.marker([lat, lon], {
-        icon: karmaicon
-      }).addTo(map);
     }
   },
 
   mounted() {
-    com.getMission(this.id).then(assignment => {
-      this.assignment = assignment;
-      this.loading = false;
+    var map = L.map(this.$refs.map, {
+      center: [this.lat, this.lon],
+      zoom: 17
     });
+
+    L.tileLayer.provider("Wikimedia").addTo(map);
+
+    var karmaicon = L.icon({
+      iconUrl: require("@/assets/illustrations/pin.png"),
+      shadowUrl: require("@/assets/illustrations/pin_shadow.png"),
+
+      iconSize: [100, 129], // size of the icon
+      shadowSize: [200, 110], // size of the shadow
+      iconAnchor: [50, 120], // point of the icon which will correspond to marker's location
+      shadowAnchor: [78, 95], // the same for the shadow
+      popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
+    });
+
+    L.marker([this.lat, this.lon], { icon: karmaicon }).addTo(map);
   }
 };
 </script>

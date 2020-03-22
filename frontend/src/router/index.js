@@ -61,10 +61,10 @@ const routes = [
 		props: true
 	},
 	{
-		path: "/auftragsdetails/:id",
+		path: "/auftragsdetails",
 		name: "AssignmentDetails",
 		component: KkAssignmentDetails,
-		props: (route) => ({ id: parseInt(route.params.id) })
+		props: true
 	},
 	{
 		path: "/danke",
