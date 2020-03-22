@@ -14,6 +14,10 @@ import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
 import KkHelperDashboard from "../views/KkHelperDashboard.vue";
 
+import KkImpressum from "../views/legal/KkImpressum.vue";
+import KkPrivacy from "../views/legal/KkPrivacy.vue";
+import KkTermsAndConditions from "../views/legal/KkTermsAndConditions.vue";
+
 // User Routes
 import KkDashboard from "../views/KkDashboard.vue";
 import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
@@ -38,12 +42,12 @@ const routes = [
 		name: "Dashboard",
 		component: KkDashboard
 	},
-    {
-        path: "/helperdashboard",
-        name: "HelperDashboard",
-        component: KkHelperDashboard,
-        nonavigation: true
-    },
+	{
+		path: "/helperdashboard",
+		name: "HelperDashboard",
+		component: KkHelperDashboard,
+		nonavigation: true
+	},
 	{
 		path: "/mein-profil",
 		name: "MyProfile",
@@ -112,6 +116,22 @@ const routes = [
 		component: KkLeaderBoard
 	},
 
+	//Legal Routes
+	{
+		path: "/impressum",
+		name: "Impressum",
+		component: KkImpressum
+	},
+	{
+		path: "/datenschutz",
+		name: "Privacy",
+		component: KkPrivacy
+	},
+	{
+		path: "/agb",
+		name: "TermsAndConditions",
+		component: KkTermsAndConditions
+	},
 	//Auditor Routes
 	{
 		path: "/auditor/dashboard",

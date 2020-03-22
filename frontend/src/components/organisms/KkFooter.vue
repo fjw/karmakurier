@@ -7,9 +7,9 @@
             </div>
         </div>
         <div class="nav">
-            <a>Nutzungsbedingungen</a>
-            <a>Datenschutz</a>
-            <a>Impressum</a>
+            <a @click="$router.push('/agb')">Nutzungsbedingungen</a>
+            <a @click="$router.push('/privacy')">Datenschutz</a>
+            <a @click="$router.push('/impressum')">Impressum</a>
         </div>
     </div>
 </template>
