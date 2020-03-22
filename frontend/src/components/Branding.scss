@@ -119,3 +119,30 @@ h6 {
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+
+.card {
+  box-shadow: none;
+  border: 3px solid $primary;
+  border-radius: 8px;
+
+  .card-header {
+    box-shadow: none;
+    background: $primary-background;
+
+    &:hover {
+      background: $primary;
+
+      .card-header-title {
+        color: white;
+      }
+
+    }
+  }
+
+  .card-footer {
+    border: 0;
+    display: flex;
+    justify-content: center;
+  }
+}

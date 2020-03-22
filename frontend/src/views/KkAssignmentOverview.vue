@@ -2,13 +2,18 @@
     <div>
 
         <div class="plzfilterinput">
+
+            <div class="title" v-if="plzfilter !== ''">
+                <span>{{assignments.length}}</span> Personen benötigen eine Einkaufsunterstüzung.
+            </div>
+
+            <div class="title" v-if="plzfilter === ''">
+                Bitte geben Sie Ihre <span>Postleitzahl</span> an.
+            </div>
+
             <b-field label="PLZ">
                 <b-input v-model="plzfilter"></b-input>
             </b-field>
-
-            <p v-if="plzfilter === ''">
-                Bitte geben Sie Ihre Postleitzahl an.
-            </p>
 
             <p v-if="plzfilter !== '' && visibleassignments.length === 0">
                 Leider wurden keine Aufträge gefunden. Bitte suchen Sie auch nach Postleitzahlen im Umkreis.
