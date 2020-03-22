@@ -1,5 +1,6 @@
 <template>
     <div class="footer-wrapper">
+        <div class="seperator"></div>
         <div class="logo">
             <img src="@/assets/logo.svg" alt />
             <div class="email">
@@ -22,6 +23,17 @@ export default {};
 
 .footer-wrapper {
     padding: 40px 0;
+    .seperator {
+        margin-bottom: 16px;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(
+            90deg,
+            rgba($black, 0) 0%,
+            rgba($black, 0.24) 50%,
+            rgba($black, 0) 100%
+        );
+    }
 }
 
 .logo {
