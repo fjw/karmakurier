@@ -4,6 +4,8 @@
 
 Datenbank-Settings in src/main/resources/application.properties müssen angepasst werden
 
+Tabellen und Dummy-Daten werden beim Start automatisch angelegt.
+
 SQL für Dummy-Daten ist in src/main/resources/import.sql
 
 # Lokal laufen lasen:
