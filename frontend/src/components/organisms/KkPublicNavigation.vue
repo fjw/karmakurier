@@ -2,7 +2,7 @@
     <nav class="navigation normalize-width">
         <div class="logo" @click="$router.push('/')">
             <!-- <img src="@/assets/logo.svg" alt="Karmakurier Logo" /> -->
-            <video autoplay muted>
+            <video class="video" autoplay muted playsinline>
                 <source src="@/assets/logo_animated_cropped.mp4" type="video/mp4" />
             </video>
         </div>
@@ -55,7 +55,21 @@ export default {
             expandMenu: false
         };
     },
-    props: {}
+    props: {},
+    mounted() {
+        // Start video.
+        let isSafari = /^((?!chrome|android).)*safari/i.test(
+            navigator.userAgent
+        );
+        let video = document.querySelector(".video");
+        if (isSafari && video) {
+            setTimeout(function() {
+                // werid fix for safari
+                document.querySelector(".video-wrapper").innerHTML =
+                    video.outerHTML;
+            }, 100);
+        }
+    }
 };
 </script>
 
