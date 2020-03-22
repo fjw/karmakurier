@@ -86,13 +86,6 @@ new Server({
         // Get my assignments.
         this.get("/my-assignments", (schema) => {
             return [schema.assignments.first()];
-        }),
-
-        // Get a single assignment.
-        this.get("/assignment/:id", (schema, request) => {
-            const id = request.params.id;
-
-            return schema.assignments.find(id);
         })
     },
 });
