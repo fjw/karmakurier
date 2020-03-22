@@ -109,5 +109,20 @@ export default {
     }
 }
 
-
+.custom-button {
+    &::after {
+        position: absolute;
+        content: "0800 123 456";
+        background-color: white;
+        border-radius: 1rem;
+        padding: 2px 6px 2px 6px;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        box-shadow: 0 4px 8px rgba($primary, 0.24);
+        border: 1px solid rgba($black, 0.16);
+        color: $black;
+    }
+}
 </style>

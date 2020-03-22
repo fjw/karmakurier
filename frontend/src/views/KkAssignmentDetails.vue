@@ -20,7 +20,15 @@
 
         <pre>{{description}}</pre>
 
-        <div class="custom-button blue" @click="$router.push('/moechte-helfen')">Auftrag annehmen!</div>
+        <div class="buttons">
+            <template v-if="!activated">
+                <div class="custom-button blue" @click="activated = true">Auftrag annehmen!</div>
+            </template>
+            <template v-if="activated">
+                <div class="custom-button orange">Kontakt aufnehmen!</div>
+                <div class="custom-button blue">Auftrag abschliessen!</div>
+            </template>
+        </div>
 
     </div>
 </template>
@@ -42,7 +50,8 @@
                 plz: "81735",
                 town: "München",
                 lat: 48.109136,
-                lon: 11.627320
+                lon: 11.627320,
+                activated: false
             };
         },
 
@@ -114,6 +123,12 @@
     .custom-button {
         width: 250px;
         margin: $generalmargin;
+    }
+
+    .buttons {
+        display: flex;
+        width: 700px;
+        margin: auto;
     }
 
 </style>
