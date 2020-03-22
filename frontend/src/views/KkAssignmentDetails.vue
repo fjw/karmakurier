@@ -1,9 +1,14 @@
 <template>
-    <div>
+    <div :class="activated ? 'activated' : ''">
 
         <div class="leftright">
             <div class="title">
-                <span>{{name}}</span> hat einen Auftrag für dich!
+                <template v-if="!activated">
+                    <span>{{name}}</span> hat einen Auftrag für dich!
+                </template>
+                <template v-if="activated">
+                    <span>Du</span> hast einen Auftrag für {{name}}. Danke dafür!
+                </template>
             </div>
 
             <p>
@@ -11,10 +16,9 @@
             </p>
         </div>
 
-        <p class="address">
-            {{address}}<br>
-            {{plz}} {{town}}
-        </p>
+        <pre class="address">
+            {{address}}
+            {{plz}} {{town}}</pre>
 
         <div ref="map" class="map"></div>
 
@@ -99,17 +103,20 @@
     }
 
     pre {
-        margin-top: $generalmargin;
+
         font-family: $family-primary;
         background: $primary-background;
 
         font-size: 1.3rem;
     }
 
+    /*
     .address {
         font-size: 1.3rem;
-        margin: $generalmargin;
+        margin-top: $generalmargin;
     }
+    */
+
 
     .leftright {
         display: flex;
@@ -127,8 +134,7 @@
 
     .buttons {
         display: flex;
-        width: 700px;
-        margin: auto;
+        justify-content: center;
     }
 
 </style>
