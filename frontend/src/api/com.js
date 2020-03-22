@@ -7,7 +7,7 @@ export default {
 
     getMissionsInRegion(zipCode) {
         return new Promise(resolve => {
-            axios.get("/assignments/" + zipCode).then(r => resolve(r.data.assignments));
+            axios.get("/orders/" + zipCode).then(r => resolve(r.data));
         });
     },
 
