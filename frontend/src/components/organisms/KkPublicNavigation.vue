@@ -175,7 +175,7 @@ export default {
                 text-align: center;
                 font-weight: 700;
                 font-size: 1.6rem;
-                color: white;
+                color: $black;
                 cursor: pointer;
                 &:hover {
                     background-color: #ff9065;

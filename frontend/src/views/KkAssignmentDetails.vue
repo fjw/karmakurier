@@ -2,11 +2,11 @@
   <div :class="activated ? 'activated' : ''">
     <div class="title">
       <template v-if="!activated">
-        <span>{{name}}</span> hat einen Auftrag für dich!
+        <span>{{name}}</span> hat eine Mission für dich!
       </template>
       <template v-if="activated">
         <span>Du</span>
-        hast einen Auftrag für {{name}}. Danke dafür!
+        hast eine Mission für {{name}}. Danke dafür!
       </template>
     </div>
 
@@ -21,11 +21,11 @@
     <div class="buttons">
       <div v-if="isLoggedIn">
         <template v-if="!activated">
-          <div class="custom-button blue" @click="activated = true">Auftrag annehmen!</div>
+          <div class="custom-button blue" @click="activated = true">Mission annehmen!</div>
         </template>
         <template v-if="activated">
           <div class="custom-button orange">Kontakt aufnehmen!</div>
-          <div class="custom-button blue" @click="$router.push('/dashboard');">Auftrag abschliessen!</div>
+          <div class="custom-button blue" @click="$router.push('/dashboard');">Mission abschliessen!</div>
         </template>
       </div>
       <div v-else>
