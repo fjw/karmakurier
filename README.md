@@ -1,5 +1,7 @@
 # karmakurier. füreinander. miteinander.
 
+https://www.youtube.com/watch?v=6Kr9JdEWCt8
+
 ## Inspiration:
 
 Ziel ist es, die Hilfesuchenden, insbesondere ältere Zielgruppen, über eine niedrige Eintrittsschwelle (z.B. per Anruf) mit potentiellen Helfern zusammen zu bringen und dabei den Helfern die verdiente Anerkennung zu schenken - die Karma Punkte. Diese sind monetarisierbar in Form von Gutscheinen oder anrechenbaren ehrenamtlichen Stunden.
