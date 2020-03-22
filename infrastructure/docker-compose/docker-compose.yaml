@@ -77,15 +77,15 @@ services:
 
 
 
-  adminer:
-    image: adminer:4.7
-    restart: always
-    ports:
-      - 8080:8080
-    depends_on:
-      - db
-    networks:
-      - coronakarma-network
+#  adminer:
+#    image: adminer:4.7
+#    restart: always
+#    ports:
+#      - 8080:8080
+#    depends_on:
+#      - db
+#    networks:
+#      - coronakarma-network
 
 networks:
   coronakarma-network:
