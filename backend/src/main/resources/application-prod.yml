@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://<TBD>
+    username: <TBD>
+    password: <TBD>
+
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQL94Dialect
+      ddl-auto: create-drop
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
