@@ -16,6 +16,7 @@ import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
 import KkDashboard from "../views/KkDashboard.vue";
 import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkInvoiceCheck from "../views/KkInvoiceCheck.vue";
+import KkMyProfile from "../views/KkMyProfile.vue";
 
 // Auditor Routes
 import KkAuditorDashboard from "../views/auditor/KkAuditorDashboard.vue";
@@ -33,6 +34,11 @@ const routes = [
 		path: "/dashboard",
 		name: "Dashboard",
 		component: KkDashboard
+	},
+	{
+		path: "/mein-profil",
+		name: "MyProfile",
+		component: KkMyProfile
 	},
 	{
 		path: "/auftraege",
