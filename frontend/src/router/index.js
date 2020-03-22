@@ -1,15 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import KkDashboard from "../views/KkDashboard.vue";
+
+// Public Routes
 import KkHome from "../views/KkHome.vue";
-import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkThankYou from "../views/KkThankYou.vue";
 import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkHelperSignup from "../views/KkHelperSignup.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
+
+// User Routes
+import KkDashboard from "../views/KkDashboard.vue";
+import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkInvoiceCheck from "../views/KkInvoiceCheck.vue";
+
+// Auditor Routes
+import KkAuditorDashboard from "../views/KkAuditorDashboard.vue";
 
 Vue.use(VueRouter);
 
@@ -64,6 +71,11 @@ const routes = [
 		path: "/beleg-check",
 		name: "InvoiceCheck",
 		component: KkInvoiceCheck
+	},
+	{
+		path: "/auditor/dashboard",
+		name: "AuditorDashboard",
+		component: KkAuditorDashboard
 	}
 ];
 
