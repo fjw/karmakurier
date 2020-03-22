@@ -10,6 +10,6 @@ import com.coronakarma.backend.model.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-	// @Query("SELECT * FROM Person p WHERE p.postalCode = :postalCode")
-	List<Person> findAllByPostalCode(String postalCode);
+	@Query("SELECT p FROM Person p WHERE  p.postalCode LIKE ?1%")
+	List<Person> findAllByPostalCodeContaining(String postalCode);
 }
