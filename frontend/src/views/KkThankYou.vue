@@ -5,7 +5,11 @@
         <div class="subtitle">Wir werden schnellstmöglich einen Helfer finden, der Kontakt zu Ihnen aufnimmt.</div>
         <div class="subtitle">Es wird sich in Kürze jemand bei Ihnen melden - wir bitten um etwas Geduld.</div>
         <br>
-        <div class="subtitle">Tutorial für die kontaktlose Übergabe</div>
+        <div class="subtitle">Kontaktlose Lieferung</div>
+        <div class="text">Gerade jetzt ist es besonders wichtig, bewusst und verantwortungsvoll im zwischenmenschlichen Kontakt zu sein. Daher gilt es das Übertragungsrisiko zu minimieren und eine kontaktlose Übergabe zwischen unseren Helfern und Hilfesuchenden sicherzustellen.</div>
+        <br>
+        <div class="text">Für die Übergabe der Besorgungen bedeutet dies, dass der Helfende die Lieferung vor der Wohnungstür abstellt und sich zwei Meter von ihr entfernt. Daraufhin wird die Lieferung von Ihnen entgegengenommen und der Helfende geht wieder.</div>
+        <br>
         <div class="video">
             <iframe
                 width="560"
@@ -17,7 +21,11 @@
             ></iframe>
         </div>
         <br>
-        <div class="subtitle">Payment process & Karma-System</div>
+        <div class="subtitle">Bezahlung</div>
+        <div class="text">Bestenfalls bedeutet dies auch, dass Sie online bezahlen. Falls Sie Bar bezahlen möchten, legen Sie bitte das Geld auf die Fussmatte und entfernen sich ebenfalls, damit der Helfende das Geld aufnehmen kann.</div>
+        <br>
+        <div class="text">Die Ansteckungswege sind noch nicht sicher geklärt und die Ansteckung über Flächen nicht ausgeschlossen. Wir empfehlen in jedem Fall die Hände zu waschen bevor und nachdem man mit der Ware oder dem desinfizierten Bargeld in Berührung kommt.</div>
+        <br>
         <div class="video">
             <iframe
                 width="560"
@@ -28,6 +36,8 @@
                 allowfullscreen
             ></iframe>
         </div>
+        <br>
+        <div class="text">Nun ist die Mission abgeschlossen - bis zum nächsten Mal!</div>
     </div>
 </template>
 
