@@ -30,13 +30,13 @@ export default {
         return new Promise(resolve => {
             axios.get("/my-assignments/").then(r => resolve(parseAssignments(r.data)));
         });
-    }
+    },
 
-    // getMission(id) {
-    //     //only logged in
-
-    //     //geolocation in frontend
-    // },
+    getMission(id) {
+        return new Promise(resolve => {
+            axios.get("/assignment/" + id).then(r => resolve(parseAssignments(r.data)));
+        });
+    },
 
     // acceptMisson() {
     // },
