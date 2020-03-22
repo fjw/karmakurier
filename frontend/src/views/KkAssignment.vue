@@ -37,15 +37,19 @@ export default {
         assignment: {
             type: Object,
             required: true
+        },
+        color: {
+            type: String,
+            default: null
         }
     },
 
     computed: {
         name() {
-            return `${this.assignment.issuer.firstName} ${this.assignment.issuer.lastName}`;
+            return `${this.assignment.person.firstName} ${this.assignment.person.lastName}`;
         },
         city() {
-            return `${this.assignment.issuer.zipCode} ${this.assignment.issuer.city}`;
+            return `${this.assignment.person.zipCode} ${this.assignment.person.city}`;
         },
         timesince() {
             return formatRelative(this.assignment.date, new Date(), { locale: de });
