@@ -1,84 +1,102 @@
 <template>
   <div class="normalize-width">
     <div class="plzfilterinput">
-      <div class="title" v-if="plzfilter !== ''">
+      <div class="title" v-if="zipCode !== ''">
         <span>{{assignments.length}}</span> Personen benötigen eine Einkaufsunterstüzung.
       </div>
 
-      <div class="title" v-if="plzfilter === ''">
-        Bitte geben Sie Ihre
-        <span>Postleitzahl</span> an.
+      <div class="title" v-if="zipCode === ''">
+        Bitte geben Sie Ihre <span>Postleitzahl</span> an.
       </div>
 
       <b-field label="PLZ">
-        <b-input v-model="plzfilter"></b-input>
+        <b-input v-model="zipCode"></b-input>
       </b-field>
 
-      <p
-        v-if="plzfilter !== '' && visibleassignments.length === 0"
-      >Leider wurden keine Missionen gefunden. Bitte suchen Sie auch nach Postleitzahlen im Umkreis.</p>
+      <p v-if="zipCode !== '' && assignments.length === 0">
+        Leider wurden keine Missionen gefunden. Bitte suchen Sie auch nach Postleitzahlen im Umkreis.
+      </p>
     </div>
 
     <kk-assignment
       class
-      v-for="assignment in visibleassignments"
+      v-for="assignment in assignments"
       :key="assignment.id"
-      :name="assignment.name"
-      :date="assignment.date"
-      :description="assignment.description"
-      :town="assignment.town"
-      :plz="assignment.plz"
+      :assignment="assignment"
     ></kk-assignment>
+
+    <b-loading :active="loading"></b-loading>
   </div>
 </template>
 
 <script>
 import KkAssignment from "./KkAssignment";
+import com from "../api/com";
+import debounce from "lodash.debounce";
+import parseISO from "date-fns/parseISO";
+
 export default {
   name: "KkAssignmentOverview",
   components: { KkAssignment },
   data() {
     return {
-      plzfilter: "81735",
-      assignments: [
-        {
-          id: 1,
-          plz: "81735",
-          town: "München",
-          time: Date.now(),
-          name: "Vanessa",
-          description:
-            "3 x Paracetamol\nBitte fragen Sie nach den günstigsten.\n\nWenn es noch Desinfiziermittel gibt würde ich 3 kleine Flaschen nehmen."
-        },
-        {
-          id: 2,
-          plz: "81735",
-          town: "München",
-          time: Date.now(),
-          name: "Harald",
-          description: "3 Äpfel\nEine Packung Oliven."
-        },
-        {
-          id: 3,
-          plz: "81735",
-          town: "München",
-          time: Date.now(),
-          name: "Hannelore",
-          description:
-            "Ich brauche nur diese einen Kornflakes. Die mit dem Affen auf der Verpackung. Bitte 4 Packungen."
-        }
-      ]
+      // Zip code.
+      zipCode: "",
+
+      // Found assignments.
+      assignments: [],
+
+      // Total number of assignments.
+      assignmentCount: 12,
+
+      // API client.
+      client: null,
+
+      // Loading state.
+      loading: false
     };
   },
 
-  computed: {
-    visibleassignments() {
-      return this.assignments.filter(
-        assignment =>
-          assignment.plz.startsWith(this.plzfilter) && this.plzfilter !== ""
-      );
+  watch: {
+    /**
+     * Watch user input with debounce to not call API too often.
+     */
+    zipCode: debounce(function(value) {
+      if (value !== "" && value.length >= 3) {
+        this.fetchAssignmentsForZip();
+      } else {
+        this.assignments = [];
+      }
+    }, 500)
+  },
+
+  methods: {
+    /**
+     * Fetch assignments for currently entered ZIP code.
+     */
+    fetchAssignmentsForZip() {
+      // Set loading state.
+      this.loading = true;
+
+      // Make API call.
+      com.getMissionsInRegion(this.zipCode)
+        .then(data => {
+          this.assignments = data.map(assignment => {
+            assignment.date = parseISO(assignment.date);
+
+            return assignment;
+          });
+        })
+        .catch(error => {
+          // @todo Handle error?
+          console.error(error);
+        })
+        .finally(() => {
+          // Unset loading state.
+          this.loading = false;
+        });
     }
-  }
+  },
 };
 </script>
 

@@ -82,8 +82,8 @@ export default {
       this.ctx.fillStyle = "rgba(255,255,255,0.3)";
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
 
-      var mouseX = this.ctx.canvas.width / 2; //dirty
-      var mouseY = 150;
+      var cx = this.ctx.canvas.width / 2;
+      var cy = 150;
 
       for (var i = 0, len = this.particles.length; i < len; i++) {
         var particle = this.particles[i];
@@ -95,8 +95,8 @@ export default {
         particle.offset.y += particle.speed;
 
         // Follow mouse with some lag
-        particle.shift.x += (mouseX - particle.shift.x) * particle.speed;
-        particle.shift.y += (mouseY - particle.shift.y) * particle.speed;
+        particle.shift.x += (cx - particle.shift.x) * particle.speed;
+        particle.shift.y += (cy - particle.shift.y) * particle.speed;
 
         // Apply position
         particle.position.x =
@@ -106,17 +106,6 @@ export default {
           particle.shift.y +
           Math.sin(i + particle.offset.y) * (particle.orbit * RADIUS_SCALE);
 
-        // Limit to screen bounds
-          /*
-        particle.position.x = Math.max(
-          Math.min(particle.position.x, this.ctx.canvas.width),
-          0
-        );
-        particle.position.y = Math.max(
-          Math.min(particle.position.y, this.ctx.canvas.height),
-          0
-        );
-        */
         particle.size += (particle.targetSize - particle.size) * 0.05;
 
         if (Math.round(particle.size) == Math.round(particle.targetSize)) {
@@ -140,6 +129,8 @@ export default {
         );
         this.ctx.fill();
       }
+
+      window.requestAnimationFrame(this.loop);
     }
   },
   mounted() {
@@ -159,7 +150,10 @@ export default {
 
     //this is dirty, solle windowanimationframe sein
     this.createParticles();
-    setInterval(this.loop, 1000 / 60);
+    this.ctx.fillStyle = "#fff";
+    this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+    window.requestAnimationFrame(this.loop);
+
   }
 };
 </script>
