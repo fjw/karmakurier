@@ -1,21 +1,17 @@
 <template>
     <div class="dashboard-wrapper">
-        <KkKarmaOverview />
-
         <div class="normalize-width">
-            <KkTaskList />
+            <KkAuditList />
         </div>
     </div>
 </template>
 
 <script>
-import KkKarmaOverview from "@/components/molecules/KkKarmaOverview";
-import KkTaskList from "@/components/organisms/KkTaskList";
+import KkAuditList from "@/components/organisms/KkAuditList";
 
 export default {
     components: {
-        KkTaskList,
-        KkKarmaOverview
+        KkAuditList
     }
 };
 </script>
