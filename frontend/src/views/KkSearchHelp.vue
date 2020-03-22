@@ -40,8 +40,8 @@
             <b-radio
               class="radio-group-radio"
               v-model="models.prefered"
-              native-value="billig"
-            >Billig</b-radio>
+              native-value="günstig"
+            >Günstig</b-radio>
           </div>
         </b-field>
         <b-field label="Maximaler Einkaufswert">

@@ -1,7 +1,10 @@
 <template>
     <div class="thank-you-wrapper">
         <div class="title">Vielen Dank!</div>
-        <div class="subtitle">Wir werden schnellstmöglich einen Helfer finden, der Kontakt zu Ihnen aufnimmt. Wir bitten um etwas Geduld, bis bald!</div>
+        <br>
+        <div class="subtitle">Wir werden schnellstmöglich einen Helfer finden, der Kontakt zu Ihnen aufnimmt.</div>
+        <div class="subtitle">Es wird sich in Kürze jemand bei Ihnen melden - wir bitten um etwas Geduld.</div>
+        <br>
         <div class="subtitle">Tutorial für die kontaktlose Übergabe</div>
         <div class="video">
             <iframe
