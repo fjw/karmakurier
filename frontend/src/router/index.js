@@ -16,7 +16,8 @@ import KkAssignmentDetails from "../views/KkAssignmentDetails.vue";
 import KkInvoiceCheck from "../views/KkInvoiceCheck.vue";
 
 // Auditor Routes
-import KkAuditorDashboard from "../views/KkAuditorDashboard.vue";
+import KkAuditorDashboard from "../views/auditor/KkAuditorDashboard.vue";
+import KkAuditorInvoiceCheck from "../views/auditor/KkAuditorInvoiceCheck.vue";
 
 Vue.use(VueRouter);
 
@@ -72,10 +73,17 @@ const routes = [
 		name: "InvoiceCheck",
 		component: KkInvoiceCheck
 	},
+
+	//Auditor Routes
 	{
 		path: "/auditor/dashboard",
 		name: "AuditorDashboard",
 		component: KkAuditorDashboard
+	},
+	{
+		path: "/auditor/beleg-check",
+		name: "AuditorInvoiceCheck",
+		component: KkAuditorInvoiceCheck
 	}
 ];
 
