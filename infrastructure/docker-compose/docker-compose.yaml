@@ -70,6 +70,7 @@ services:
 #      - PGRST_DB_SCHEMA=
 #      - PGRST_DB_ANON_ROLE=
 
+
   adminer:
     image: adminer:4.7
     restart: always
