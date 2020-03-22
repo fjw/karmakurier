@@ -1,5 +1,7 @@
 import axios from "axios";
 import parseISO from "date-fns/parseISO";
+import { formatRelative } from "date-fns";
+import { de } from "date-fns/locale";
 
 /**
  * Fix date in data from API.
@@ -8,11 +10,16 @@ import parseISO from "date-fns/parseISO";
  * @returns {array}
  */
 function parseAssignments(assignments) {
-    return assignments.map(assignment => {
-        assignment.date = parseISO(assignment.date);
+    return assignments.map(assignment => parseAssignment(assignment));
+}
 
-        return assignment;
-    });
+function parseAssignment(assignment) {
+    if (assignment !== null) {
+        assignment.date = parseISO(assignment.date);
+        assignment.timeSince = formatRelative(assignment.date, new Date(), { locale: de });
+    }
+
+    return assignment;
 }
 
 export default {
@@ -34,7 +41,7 @@ export default {
 
     getMission(id) {
         return new Promise(resolve => {
-            axios.get("/assignment/" + id).then(r => resolve(parseAssignments(r.data)));
+            axios.get("/assignment/" + id).then(r => resolve(parseAssignment(r.data.assignment)));
         });
     },
 
