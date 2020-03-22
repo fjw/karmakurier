@@ -9,6 +9,7 @@ import KkHelperSignup from "../views/KkHelperSignup.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
+import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 
 // User Routes
 import KkDashboard from "../views/KkDashboard.vue";
@@ -32,6 +33,12 @@ const routes = [
 		name: "Dashboard",
 		component: KkDashboard
 	},
+    {
+        path: "/auftraege",
+        name: "AssignmentOverview",
+        component: KkAssignmentOverview,
+        props: true
+    },
 	{
 		path: "/auftragsdetails",
 		name: "AssignmentDetails",

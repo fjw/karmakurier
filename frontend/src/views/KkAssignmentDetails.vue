@@ -1,24 +1,22 @@
 <template>
     <div :class="activated ? 'activated' : ''">
 
-        <div class="leftright">
-            <div class="title">
-                <template v-if="!activated">
-                    <span>{{name}}</span> hat einen Auftrag für dich!
-                </template>
-                <template v-if="activated">
-                    <span>Du</span> hast einen Auftrag für {{name}}. Danke dafür!
-                </template>
-            </div>
-
-            <p>
-                vor 2 Minuten ( 22.03 14:00 )
-            </p>
+        <div class="title">
+            <template v-if="!activated">
+                <span>{{name}}</span> hat einen Auftrag für dich!
+            </template>
+            <template v-if="activated">
+                <span>Du</span> hast einen Auftrag für {{name}}. Danke dafür!
+            </template>
         </div>
 
+        <p>
+            vor 2 Minuten ( 22.03 14:00 )
+        </p>
+
         <pre class="address">
-            {{address}}
-            {{plz}} {{town}}</pre>
+{{address}}
+{{plz}} {{town}}</pre>
 
         <div ref="map" class="map"></div>
 
@@ -108,6 +106,7 @@
         background: $primary-background;
 
         font-size: 1.3rem;
+        padding: 20px;
     }
 
     /*
