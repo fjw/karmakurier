@@ -9,26 +9,23 @@
         >
             <div slot="trigger" class="card-header" role="button" aria-controls="contentIdForA11y3">
                 <div class="card-header-title">
-                    <div>{{name}} aus {{city}}</div>
-                    <div>{{timesince}}</div>
+                    <div>{{assignment.person.firstName}} {{assignment.person.lastName}} aus {{assignment.person.zipCode}} {{assignment.person.city}}</div>
+                    <div>{{assignment.timesince}}</div>
                 </div>
             </div>
             <div class="card-content">
                 <div class="content">{{assignment.shoppingList}}</div>
             </div>
             <footer class="card-footer">
-                <div
-                    class="custom-button blue"
-                    @click="$router.push('/auftragsdetails')"
-                >Jetzt helfen!</div>
+                <router-link class="custom-button blue" :to="{ name: 'AssignmentDetails', params: { id: assignment.id } }">
+                    Jetzt helfen!
+                </router-link>
             </footer>
         </b-collapse>
     </section>
 </template>
 
 <script>
-import { formatRelative } from "date-fns";
-import { de } from "date-fns/locale";
 
 export default {
     name: "KkAssignment",
@@ -41,18 +38,6 @@ export default {
         color: {
             type: String,
             default: null
-        }
-    },
-
-    computed: {
-        name() {
-            return `${this.assignment.person.firstName} ${this.assignment.person.lastName}`;
-        },
-        city() {
-            return `${this.assignment.person.zipCode} ${this.assignment.person.city}`;
-        },
-        timesince() {
-            return formatRelative(this.assignment.date, new Date(), { locale: de });
         }
     }
 };

@@ -35,19 +35,22 @@ function getPerson(zipCode) {
         zipCode: zipCode,
         city: faker.address.city(),
         streetAddress: faker.address.streetAddress(),
-        phoneNumber: faker.phone.phoneNumber()
+        phoneNumber: faker.phone.phoneNumber(),
+        lat: 48.109136,
+        lon: 11.62732,
     };
 }
 
 /**
  * Get a random assignment at the given zip code.
  *
+ * @param {number} id
  * @param {string} zipCode
  * @returns {object}
  */
-function getRandomAssignment(zipCode) {
+function getRandomAssignment(id, zipCode) {
     return {
-        id: getId(),
+        id: id,
         person: getPerson(zipCode),
         shoppingList: faker.lorem.sentence(),
         date: subHours(new Date(), getRandomInt(12))
@@ -66,10 +69,10 @@ new Server({
     // Seed the server.
     seeds(server) {
         // Create random assignments.
+        let id = 1;
         for (let i = 0; i <= 9; i++) {
             for (let j = 0; j <= 9; j++) {
-                const zipCode = baseZipCode + i + j;
-                server.schema.assignments.create(getRandomAssignment(zipCode));
+                server.schema.assignments.create(getRandomAssignment(id++, baseZipCode + i + j));
             }
         }
     },
