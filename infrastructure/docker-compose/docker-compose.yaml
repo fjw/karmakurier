@@ -43,7 +43,7 @@ services:
  
   db:
     image: postgres:12.2-alpine
-    container_name: coronakarma-mongodb
+    container_name: coronakarma-postgres
     restart: always
     ports:
       - "5432"
