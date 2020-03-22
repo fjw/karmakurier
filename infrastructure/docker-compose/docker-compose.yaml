@@ -42,7 +42,10 @@ services:
     #command: ./wait-for.sh db:5432 -- npm start
  
   db:
-    image: postgres:12.2-alpine
+    build:
+    context: ../../database
+    dockerfile: Dockerfile
+    image: coronakarma-db:1.0
     container_name: coronakarma-postgres
     restart: always
     ports:
