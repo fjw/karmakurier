@@ -9,6 +9,12 @@
         Bitte geben Sie Ihre <span>Postleitzahl</span> an.
       </div>
 
+      <div class="text">
+Hier finden Sie alle aktuell noch offenen Missionen. Werden Sie aktiv und tun Sie Gutes! Unterstützen Sie Hilfesuchende, indem Sie eine Mission annehmen.
+Tragen Sie Ihre Postleitzahl ein, um Gesuche aus Ihrer Umgebung zu finden.
+Viel Freude und gutes Karma!
+      </div>
+
       <b-field label="PLZ">
         <b-input v-model="zipCode"></b-input>
       </b-field>
