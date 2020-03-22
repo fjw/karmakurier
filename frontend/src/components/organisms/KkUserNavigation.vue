@@ -100,7 +100,6 @@ export default {
     border-radius: 100%;
     height: 40px;
     width: 40px;
-    margin-top: 8px;
     &:hover {
         background-color: rgba($primary, 0.16);
     }
@@ -190,6 +189,10 @@ export default {
         i {
             color: $blue;
         }
+    }
+
+    .hamburger-menu {
+        margin-top: 12px;
     }
 
     .items {
