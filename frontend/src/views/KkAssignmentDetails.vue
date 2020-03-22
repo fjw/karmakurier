@@ -18,7 +18,15 @@
 
     <div ref="map" class="map"></div>
 
-    <pre>{{description}}</pre>
+    <div class="buttons">
+      <template v-if="!activated">
+        <div class="custom-button blue" @click="activated = true">Auftrag annehmen!</div>
+      </template>
+      <template v-if="activated">
+        <div class="custom-button orange">Kontakt aufnehmen!</div>
+        <div class="custom-button blue" @click="$router.push('/dashboard');">Auftrag abschliessen!</div>
+      </template>
+    </div>
 
     <div class="buttons">
       <template v-if="!activated">
