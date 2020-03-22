@@ -8,7 +8,7 @@
         </div>
         <div class="nav">
             <a @click="$router.push('/agb')">Nutzungsbedingungen</a>
-            <a @click="$router.push('/privacy')">Datenschutz</a>
+            <a @click="$router.push('/datenschutz')">Datenschutz</a>
             <a @click="$router.push('/impressum')">Impressum</a>
         </div>
     </div>
