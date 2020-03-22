@@ -5,6 +5,8 @@
         Sie sind in
         <span>guten Händen.</span>
       </div>
+        <p>Füllen Sie nachfolgendes Formular in Ruhe aus - Wir finden so schnell wie möglich den passenden Alltagshelfer für Sie.</p>
+        <p></p>
       <div class="form">
         <b-field class="firstname" label="Vorname">
           <b-input></b-input>
