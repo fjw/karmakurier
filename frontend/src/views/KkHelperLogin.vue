@@ -17,7 +17,7 @@
                             :type="{ 'is-danger': errors[0], 'is-success': valid }"
                             :message="errors"
                         >
-                            <b-input v-model="phone"></b-input>
+                            <b-input v-model="loginData.phone"></b-input>
                         </b-field>
                     </ValidationProvider>
 
@@ -32,7 +32,7 @@
                             :type="{ 'is-danger': errors[0], 'is-success': valid }"
                             :message="errors"
                         >
-                            <b-input type="password" v-model="password"></b-input>
+                            <b-input type="password" v-model="loginData.password"></b-input>
                         </b-field>
                     </ValidationProvider>
                     <b-button class="btn" type="is-blue" @click="handleSubmit(login)">Jetzt anmelden</b-button>
@@ -54,13 +54,15 @@
 export default {
     data() {
         return {
-            phone: "",
-            password: ""
+            loginData: {
+                phone: "",
+                password: ""
+            }
         };
     },
     methods: {
         login() {
-            this.$store.commit("logIn");
+            this.$store.commit("logIn", this.loginData);
             this.$router.go(-1); // go back
         }
     }
