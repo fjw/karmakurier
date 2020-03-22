@@ -5,15 +5,7 @@
 // Set our font
 // $family-primary: "Quicksand", sans-serif;
 $family-primary: "Muli", sans-serif;
-.title,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Quicksand", sans-serif;
-}
+
 
 // Set your colors
 $primary: #ff966e;
@@ -76,6 +68,52 @@ $colors: (
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
+
+
+// Headlines
+.title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+
+  span {
+    font-weight: 700;
+    color: $secondary;
+  }
+}
+
+// Buttons
+.custom-button {
+  min-width: 200px;
+  border: 3px solid $primary;
+  border-radius: 8px;
+  padding: 6px 12px 6px 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.16s ease;
+  &.orange {
+    position: relative;
+    border: 3px solid $primary;
+
+    &:hover {
+      color: white;
+      background-color: $primary;
+    }
+  }
+  &.blue {
+    border: 3px solid $secondary;
+    &:hover {
+      color: white;
+      background-color: $secondary;
+    }
+  }
+}
 
 // Import Bulma and Buefy styles
 @import "~bulma";
