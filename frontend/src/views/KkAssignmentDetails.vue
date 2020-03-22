@@ -28,7 +28,7 @@
             </template>
             <template v-if="activated">
                 <div class="custom-button orange">Kontakt aufnehmen!</div>
-                <div class="custom-button blue">Auftrag abschliessen!</div>
+                <div class="custom-button blue" @click='$router.push("/dashboard");'>Auftrag abschliessen!</div>
             </template>
         </div>
 
