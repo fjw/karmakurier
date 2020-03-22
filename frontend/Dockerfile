@@ -28,6 +28,6 @@ RUN mkdir /etc/nginx/ssl
 RUN chmod 700 /etc/nginx/ssl
 COPY ./docker/ssl/karmakurier-org.crt /etc/nginx/ssl/
 COPY ./docker/ssl/karmakurier-org.key /etc/nginx/ssl/
-COPY ./docker/ssl/karmakurier-org.bundle /etc/nginx/ssl/
+
 
 EXPOSE 80 443
