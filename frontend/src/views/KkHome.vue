@@ -9,13 +9,13 @@
     <div class="cta-wrapper">
       <div class="cta">
         <img src="@/assets/illustrations/orange_persons.png" alt="brauche hilfe bild" />
-        <router-link to="/suche-hilfe" class="custom-button orange">Ich brauche Hilfe</router-link>
+        <div class="custom-button orange" @click="$router.push('/suche-hilfe')">Ich brauche Hilfe</div>
       </div>
       <div class="middle">
         <img src="@/assets/illustrations/arrow.png" alt="pfeil bild" />
       </div>
       <div class="cta">
-        <router-link to="/moechte-helfen" class="custom-button blue">Ich möchte helfen</router-link>
+        <div class="custom-button blue" @click="$router.push('/moechte-helfen')">Ich möchte helfen</div>
         <img src="@/assets/illustrations/blue_persons.png" alt="kann helfen bild" />
       </div>
     </div>
