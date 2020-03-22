@@ -4,17 +4,18 @@ import axios from "axios";
 export default {
 
 
+
     postMission() {
         // radiovalues als strings
 
     },
 
-    getMissionsInRegion(plz) {
+    getMissionsInRegion() { //plz
         // mindestens 3 ziffern
 
     },
 
-    getMission(id) {
+    getMission() { // getmission
         //only logged in
 
         //geolocation in frontend
