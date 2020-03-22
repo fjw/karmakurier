@@ -40,10 +40,10 @@
             </div>
             <div class="items normalize-width">
                 <ul>
-                    <li>suche</li>
-                    <li>biete</li>
-                    <li>faq</li>
-                    <li>helfer login</li>
+                    <li @click="$router.push('/suche-hilfe'); expandMenu = false">suche</li>
+                    <li @click="$router.push('/moechte-helfen'); expandMenu = false">biete</li>
+                    <li @click="$router.push('/faq'); expandMenu = false">faq</li>
+                    <li @click="$router.push('/einloggen'); expandMenu = false">helfer login</li>
                 </ul>
             </div>
         </div>
