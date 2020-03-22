@@ -1,6 +1,4 @@
--- Adminer 4.7.6 PostgreSQL dump
-
-CREATE SEQUENCE person_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START  CACHE 1;
+CREATE SEQUENCE person_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647;
 CREATE TABLE "public"."person" (
     "firstName" character varying NOT NULL,
     "lastName" character varying NOT NULL,
@@ -11,7 +9,7 @@ CREATE TABLE "public"."person" (
     "id" integer DEFAULT nextval('person_id_seq') NOT NULL,
     CONSTRAINT "person_id" PRIMARY KEY ("id")
 ) WITH (oids = false);
-CREATE SEQUENCE requester_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START  CACHE 1;
+CREATE SEQUENCE requester_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647;
 CREATE TABLE "public"."requester" (
     "person_id" integer NOT NULL,
     "shopping_list" character varying NOT NULL,
@@ -23,7 +21,7 @@ CREATE TABLE "public"."requester" (
     CONSTRAINT "requester_id" PRIMARY KEY ("id"),
     CONSTRAINT "requester_person_id_fkey" FOREIGN KEY (person_id) REFERENCES person(id) ON UPDATE CASCADE ON DELETE CASCADE NOT DEFERRABLE
 ) WITH (oids = false);
-CREATE SEQUENCE supporter_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START  CACHE 1;
+CREATE SEQUENCE supporter_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647;
 CREATE TABLE "public"."supporter" (
     "person_id" integer NOT NULL,
     "email" character varying NOT NULL,
