@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 // Public Routes
 import KkHome from "../views/KkHome.vue";
 import KkThankYou from "../views/KkThankYou.vue";
+import KKHelperSignup from "../views/KkHelperSignup.vue";
 import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
@@ -62,6 +63,11 @@ const routes = [
 		path: "/einloggen",
 		name: "HelperLogin",
 		component: KkHelperLogin
+	},
+	{
+		path: "/regestrieren",
+		name: "HelperRegistration",
+		component: KKHelperSignup
 	},
 	{
 		path: "/moechte-helfen",

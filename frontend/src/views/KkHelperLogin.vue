@@ -18,6 +18,10 @@
       Du hast dein Passwort vergessen? Dann
       <router-link to="forgot-password">klick hier.</router-link>
     </p>
+    <p>
+      Du hast noch keinen Account? Dann
+      <a href="/regestrieren">logge dich hier ein.</a>
+    </p>
   </div>
 </template>
 

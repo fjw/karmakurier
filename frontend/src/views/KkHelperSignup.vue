@@ -48,7 +48,7 @@
     </div>
     <p>
       Du hast bereits einen Account? Dann
-      <a href="/login">logge dich hier ein.</a>
+      <a href="/l">logge dich hier ein.</a>
     </p>
   </div>
 </template>
