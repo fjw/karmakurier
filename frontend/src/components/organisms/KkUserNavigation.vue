@@ -5,7 +5,7 @@
         </div>
 
         <div class="right">
-            <div class="karma" @click="$router.push('/redeem')">
+            <div class="karma" @click="$router.push('/leader-board')">
                 <KarmaIcon />
             </div>
 
