@@ -86,10 +86,6 @@ export default {
     }
     .title {
         // background-color: $primary;
-        span {
-            font-weight: 700;
-            color: $blue;
-        }
         padding: 16px;
     }
     .form {

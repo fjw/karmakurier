@@ -109,44 +109,5 @@ export default {
     }
 }
 
-.custom-button {
-    min-width: 200px;
-    border: 3px solid $primary;
-    border-radius: 8px;
-    padding: 6px 12px 6px 12px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.16s ease;
-    &.orange {
-        position: relative;
-        border: 3px solid $primary;
-        &::after {
-            position: absolute;
-            content: "0800 123 456";
-            background-color: white;
-            border-radius: 1rem;
-            padding: 2px 6px 2px 6px;
-            bottom: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12px;
-            box-shadow: 0px 4px 8px rgba($primary, 0.24);
-            border: 1px solid rgba($black, 0.16);
-            color: $black;
-        }
-        &:hover {
-            color: white;
-            background-color: $primary;
-        }
-    }
-    &.blue {
-        border: 3px solid $blue;
-        &:hover {
-            color: white;
-            background-color: $blue;
-        }
-    }
-}
+
 </style>

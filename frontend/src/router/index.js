@@ -32,7 +32,7 @@ const routes = [
 		component: KkDashboard
 	},
 	{
-		path: "/auftragsdetails/:id",
+		path: "/auftragsdetails",
 		name: "AssignmentDetails",
 		component: KkAssignmentDetails,
 		props: true

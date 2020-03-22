@@ -1,18 +1,17 @@
 <template>
     <div>
-        <h1 class="title">Auftrag</h1>
 
         <div class="leftright">
-            <h2>
-                {{name}}
-            </h2>
+            <div class="title">
+                <span>{{name}}</span> hat einen Auftrag für dich!
+            </div>
 
             <p>
                 vor 2 Minuten ( 22.03 14:00 )
             </p>
         </div>
 
-        <p>
+        <p class="address">
             {{address}}<br>
             {{plz}} {{town}}
         </p>
@@ -20,6 +19,8 @@
         <div ref="map" class="map"></div>
 
         <pre>{{description}}</pre>
+
+        <div class="custom-button blue" @click="$router.push('/moechte-helfen')">Auftrag annehmen!</div>
 
     </div>
 </template>
@@ -76,7 +77,7 @@
     @import "@/components/Branding.scss";
     @import "~leaflet/dist/leaflet.css";
 
-    p, h2, h1 {
+    p, h2, h1, .title {
         margin: 5px $generalmargin;
     }
 
@@ -92,6 +93,13 @@
         margin-top: $generalmargin;
         font-family: $family-primary;
         background: $primary-background;
+
+        font-size: 1.3rem;
+    }
+
+    .address {
+        font-size: 1.3rem;
+        margin: $generalmargin;
     }
 
     .leftright {
@@ -101,6 +109,11 @@
         p {
             text-align: right;
         }
+    }
+
+    .custom-button {
+        width: 250px;
+        margin: $generalmargin;
     }
 
 </style>
