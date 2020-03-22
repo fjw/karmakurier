@@ -20,7 +20,7 @@
                     <router-link to="einloggen">Helfer Login</router-link>
                 </li>
                 <li>
-                    <router-link to="regestrieren">Als Helfer registrieren</router-link>
+                    <router-link to="registrieren">Als Helfer registrieren</router-link>
                 </li>
             </ul>
         </div>
@@ -40,7 +40,7 @@
                     <li @click="$router.push('/faq'); expandMenu = false">Wie es funktioniert & FAQ</li>
                     <li @click="$router.push('/einloggen'); expandMenu = false">Helfer Login</li>
                     <li
-                        @click="$router.push('/regestrieren'); expandMenu = false"
+                        @click="$router.push('/registrieren'); expandMenu = false"
                     >Als Helfer registrieren</li>
                 </ul>
             </div>
