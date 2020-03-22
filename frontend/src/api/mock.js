@@ -1,4 +1,4 @@
-import { Server } from "miragejs";
+import { Server, Model } from "miragejs";
 import faker from "faker";
 import { subHours } from "date-fns";
 
@@ -40,74 +40,46 @@ function getPerson(zipCode) {
 }
 
 /**
- * Get a shopping habit.
- *
- * @returns {object}
- */
-function getShoppingHabit() {
-    return {
-        id: getId(),
-        instructions: faker.lorem.sentence()
-    };
-}
-
-/**
- * Get a payment method.
- *
- * @returns {object}
- */
-function getPaymentMethod() {
-    return {
-        id: getRandomInt(2) === 0 ? 'cash' : 'paypal'
-    };
-}
-
-/**
- * Get an order at the given zip code.
+ * Get a random assignment at the given zip code.
  *
  * @param {string} zipCode
  * @returns {object}
  */
-function getOrder(zipCode) {
+function getRandomAssignment(zipCode) {
     return {
         id: getId(),
-        paymentMethod: getPaymentMethod(),
-        issuer: getPerson(zipCode),
-        shoppingHabit: getShoppingHabit(),
-        maximumAmount: Math.round(Math.random() * Math.floor(100), 2),
+        person: getPerson(zipCode),
         shoppingList: faker.lorem.sentence(),
-        // Date is not in the API specs!
         date: subHours(new Date(), getRandomInt(12))
     }
 }
 
-/**
- * Make a complete zip code from a partial one.
- *
- * @param {string} zipCode
- * @returns {string}
- */
-function completeZipCode(zipCode) {
-    let zipCodeString = String(zipCode);
-
-    while (zipCodeString.length < 5) {
-        zipCodeString += getRandomInt(10);
-    }
-
-    return zipCodeString;
-}
+// Base zip code for all generated assignments.
+const baseZipCode = "801";
 
 new Server({
-  routes() {
-    this.get("/orders/:zipCode", (schema, request) => {
-        // Get zip code from url.
-        const zipCode = request.params.zipCode;
+    // Define models.
+    models: {
+        assignment: Model,
+    },
 
-        // Determine number of results.
-        const results = getRandomInt(5);
+    // Seed the server.
+    seeds(server) {
+        // Create random assignments.
+        for (let i = 0; i <= 9; i++) {
+            for (let j = 0; j <= 9; j++) {
+                const zipCode = baseZipCode + i + j;
+                server.schema.assignments.create(getRandomAssignment(zipCode));
+            }
+        }
+    },
 
-        // Generate results.
-        return [...Array(results).keys()].map(() => (getOrder(completeZipCode(zipCode))));
-    });
-  },
+    routes() {
+        this.get("/assignments/:zipCode", (schema, request) => {
+            // Get zip code from url.
+            const zipCode = request.params.zipCode;
+
+            return schema.assignments.where(assignment => assignment.person.zipCode.startsWith(zipCode));
+        });
+    },
 });
