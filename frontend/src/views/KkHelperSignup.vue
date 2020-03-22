@@ -96,20 +96,9 @@
                         </b-field>
                     </ValidationProvider>
 
-                    <ValidationProvider
-                        name="E-Mail"
-                        rules="required|email"
-                        v-slot="{ errors, valid }"
-                        class="email"
-                    >
-                        <b-field
-                            label="E-Mail"
-                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
-                            :message="errors"
-                        >
-                            <b-input v-model="signUpData.email"></b-input>
-                        </b-field>
-                    </ValidationProvider>
+                    <b-field label="E-Mail (optional)">
+                        <b-input v-model="signUpData.email"></b-input>
+                    </b-field>
 
                     <ValidationProvider
                         name="Telefon"

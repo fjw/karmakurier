@@ -19,8 +19,8 @@
             </div>
         </div>
         <p>
-            Dein Beleg ist zerstört oder nicht mehr vorhanden? Dann
-            <router-link to="forgot-password">klick hier.</router-link>
+            Dein Beleg ist zerstört oder nicht mehr vorhanden? Dann schreib uns eine E-Mail an
+            <a>beleg@karmakurier.org</a>
         </p>
     </div>
 </template>
