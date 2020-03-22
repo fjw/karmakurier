@@ -2,36 +2,35 @@
     <div class="login-wrapper">
         <div class="form-wrapper">
             <div class="title">
-                <span>Mega-schön</span> dich wiederzusehen!
+                <span>In 2 Minuten</span> zum neuen Passwort.
             </div>
+
+            <b-notification
+                v-if="showSuccess"
+                type="is-success"
+                aria-close-label="Close notification"
+            >Bitte überprüfe deinen E-Mail Eingang. Wir haben dir eine E-Mail geschickt mit der du dein Passwort zurücksetzen kannst.</b-notification>
+
             <div class="form">
-                <b-field class="phone" label="Telefon">
-                    <b-input type="number"></b-input>
+                <b-field label="E-Mail">
+                    <b-input></b-input>
                 </b-field>
-                <b-field class="password" label="Passwort">
-                    <b-input type="password"></b-input>
-                </b-field>
-                <b-button class="btn" type="is-blue" @click="login()">Jetzt anmelden</b-button>
+                <b-button class="btn" type="is-blue" @click="showSuccess = true">Jetzt zurücksetzen</b-button>
             </div>
         </div>
         <p>
-            Du hast dein Passwort vergessen? Dann
-            <router-link to="/passwort-vergessen">klick hier.</router-link>
-        </p>
-        <p>
-            Du hast noch keinen Account? Dann
-            <a href="/registrieren">registriere dich hier.</a>
+            Dir ist dein Passwort gerade wieder eingefallen? Dann
+            <router-link to="/einloggen">klick hier.</router-link>
         </p>
     </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        login() {
-            this.$store.commit("logIn");
-            this.$router.go(-1); // go back
-        }
+    data() {
+        return {
+            showSuccess: false
+        };
     }
 };
 </script>

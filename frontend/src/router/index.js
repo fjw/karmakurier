@@ -13,6 +13,7 @@ import KkAssignmentSearchView from "../views/KkAssignmentSearchView.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
 import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
 import KkHelperDashboard from "../views/KkHelperDashboard.vue";
+import KkForgotPassword from "../views/KkForgotPassword.vue";
 
 import KkImpressum from "../views/legal/KkImpressum.vue";
 import KkPrivacy from "../views/legal/KkPrivacy.vue";
@@ -114,6 +115,11 @@ const routes = [
 		path: "/leader-board",
 		name: "LeaderBoard",
 		component: KkLeaderBoard
+	},
+	{
+		path: "/passwort-vergessen",
+		name: "ForgotPassword",
+		component: KkForgotPassword
 	},
 
 	//Legal Routes
