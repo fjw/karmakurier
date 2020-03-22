@@ -1,7 +1,6 @@
 <template>
-    <div class="legal-wrapper">
-        <div class="title">Datenschutz</div>
-        <p>todo</p>
+    <div class="legal-wrapper normalize-width">
+        <div class="title">Datehnschutz</div>
     </div>
 </template>
 
@@ -17,9 +16,8 @@ export default {
 .legal-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
-    padding: 40px 16px 64px 16px;
 }
 
 .title {
@@ -28,9 +26,19 @@ export default {
         font-weight: 700;
         color: $blue;
     }
-    padding: 16px;
+    padding: 16px 0;
 }
 
-p {
+h2 {
+    color: $blue;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 16px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 16px;
 }
 </style>
