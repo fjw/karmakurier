@@ -4,15 +4,40 @@
             <div class="title">
                 <span>Mega-schön</span> dich wiederzusehen!
             </div>
-            <div class="form">
-                <b-field class="phone" label="Telefon">
-                    <b-input type="number"></b-input>
-                </b-field>
-                <b-field class="password" label="Passwort">
-                    <b-input type="password"></b-input>
-                </b-field>
-                <b-button class="btn" type="is-blue" @click="login()">Jetzt anmelden</b-button>
-            </div>
+            <ValidationObserver v-slot="{ handleSubmit }">
+                <div class="form">
+                    <ValidationProvider
+                        name="Telefon"
+                        rules="required|min:5"
+                        v-slot="{ errors, valid }"
+                    >
+                        <b-field
+                            class="phone"
+                            label="Telefon"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input v-model="phone"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                        name="Passwort"
+                        rules="required|min:8"
+                        v-slot="{ errors, valid }"
+                    >
+                        <b-field
+                            class="password"
+                            label="Passwort"
+                            :type="{ 'is-danger': errors[0], 'is-success': valid }"
+                            :message="errors"
+                        >
+                            <b-input type="password" v-model="password"></b-input>
+                        </b-field>
+                    </ValidationProvider>
+                    <b-button class="btn" type="is-blue" @click="handleSubmit(login)">Jetzt anmelden</b-button>
+                </div>
+            </ValidationObserver>
         </div>
         <p>
             Du hast dein Passwort vergessen? Dann
@@ -27,6 +52,12 @@
 
 <script>
 export default {
+    data() {
+        return {
+            phone: "",
+            password: ""
+        };
+    },
     methods: {
         login() {
             this.$store.commit("logIn");
