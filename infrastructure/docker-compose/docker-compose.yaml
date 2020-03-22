@@ -50,10 +50,12 @@ services:
     restart: always
     ports:
       - "5432"
-    environment:
-      - POSTGRES_USER=
-      - POSTGRES_PASSWORD=
-      -
+  env_file:
+    - ../../database/.env
+#    environment:
+#      - POSTGRES_USER=
+#      - POSTGRES_PASSWORD=
+#      -
     volumes:
       - /var/postgres:/var/lib/postgresql/data
     networks:
