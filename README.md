@@ -40,3 +40,14 @@ Lösungsansatz:
 - Die Kostenrückerstattung für den Helfer erfolgt schließlich entweder über ein Konto oder ebenfalls einen dritten Zahlungsanbieter.
 - Sowohl der Vermittler als auch der Einkäufer erhalten nach einem definierten Scoring im Anschluss an die Vermittlung bzw. den Einkauf die entsprechenden Karma-Punkte. Karma-Punkte besitzen eine monetären Wert, die in Form von Gutscheinen, Spenden oder als ehrenamtliche Stunde abgesetzt werden können.
 
+## Screenshots:
+
+![a](screens/a.png)
+
+![b](screens/b.png)
+
+![c](screens/c.png)
+
+![d](screens/d.png)
+
+![e](screens/e.png)
