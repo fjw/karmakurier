@@ -10,7 +10,7 @@
 
         <div class="wrapper">
             <div class="title">
-                <span>Die tollste Helfer</span> in deiner Nähe!
+                <span>Die tollsten Helfer</span> in deiner Nähe!
             </div>
             <div class="top3">
                 <div class="top3__place">

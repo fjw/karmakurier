@@ -25,16 +25,12 @@
 </template>
 
 <script>
-var SCREEN_WIDTH = window.innerWidth;
-var SCREEN_HEIGHT = window.innerHeight;
 
 var RADIUS = 300;
 
 var RADIUS_SCALE = 1;
-var RADIUS_SCALE_MIN = 1;
 var RADIUS_SCALE_MAX = 1.5;
 
-var mouseIsDown = false;
 
 export default {
   name: "KkKarmaHeader",
@@ -71,7 +67,7 @@ export default {
           },
           speed: 0.002 + Math.random() * 0.008,
           targetSize: 1,
-          fillColor: "hsl(17, 100%, 72%)",
+          fillColor: "hsl(17, 100%, "+(Math.random()*30+50)+"%)",
           orbit: RADIUS * 0.5 + RADIUS * 0.5 * Math.random()
         };
 
@@ -80,15 +76,10 @@ export default {
     },
 
     loop() {
-      if (mouseIsDown) {
-        RADIUS_SCALE += (RADIUS_SCALE_MAX - RADIUS_SCALE) * 0.02;
-      } else {
-        RADIUS_SCALE -= (RADIUS_SCALE - RADIUS_SCALE_MIN) * 0.02;
-      }
 
       RADIUS_SCALE = Math.min(RADIUS_SCALE, RADIUS_SCALE_MAX);
 
-      this.ctx.fillStyle = "rgba(255,255,255,0.7)";
+      this.ctx.fillStyle = "rgba(255,255,255,0.3)";
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
 
       var mouseX = this.ctx.canvas.width / 2; //dirty
@@ -116,15 +107,16 @@ export default {
           Math.sin(i + particle.offset.y) * (particle.orbit * RADIUS_SCALE);
 
         // Limit to screen bounds
+          /*
         particle.position.x = Math.max(
-          Math.min(particle.position.x, SCREEN_WIDTH),
+          Math.min(particle.position.x, this.ctx.canvas.width),
           0
         );
         particle.position.y = Math.max(
-          Math.min(particle.position.y, SCREEN_HEIGHT),
+          Math.min(particle.position.y, this.ctx.canvas.height),
           0
         );
-
+        */
         particle.size += (particle.targetSize - particle.size) * 0.05;
 
         if (Math.round(particle.size) == Math.round(particle.targetSize)) {
