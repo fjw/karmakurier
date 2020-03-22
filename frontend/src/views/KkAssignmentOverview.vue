@@ -39,7 +39,6 @@ Viel Freude und gutes Karma!
 import KkAssignment from "./KkAssignment";
 import com from "../api/com";
 import debounce from "lodash.debounce";
-import parseISO from "date-fns/parseISO";
 
 export default {
   name: "KkAssignmentOverview",
@@ -86,12 +85,8 @@ export default {
 
       // Make API call.
       com.getMissionsInRegion(this.zipCode)
-        .then(data => {
-          this.assignments = data.map(assignment => {
-            assignment.date = parseISO(assignment.date);
-
-            return assignment;
-          });
+        .then(assignments => {
+          this.assignments = assignments;
         })
         .catch(error => {
           // @todo Handle error?

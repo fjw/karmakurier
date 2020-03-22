@@ -55,7 +55,7 @@ function getRandomAssignment(zipCode) {
 }
 
 // Base zip code for all generated assignments.
-const baseZipCode = "801";
+const baseZipCode = "817";
 
 new Server({
     // Define models.
@@ -75,11 +75,17 @@ new Server({
     },
 
     routes() {
+        // Get assignments by zip code.
         this.get("/assignments/:zipCode", (schema, request) => {
             // Get zip code from url.
             const zipCode = request.params.zipCode;
 
-            return schema.assignments.where(assignment => assignment.person.zipCode.startsWith(zipCode));
+            return schema.assignments.where(assignment => assignment.person.zipCode.startsWith(zipCode)).models;
         });
+
+        // Get my assignments.
+        this.get("/my-assignments", (schema) => {
+            return [schema.assignments.first()];
+        })
     },
 });
