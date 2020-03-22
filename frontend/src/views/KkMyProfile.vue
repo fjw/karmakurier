@@ -5,6 +5,7 @@
             <div class="tasks">
                 <kk-assignment
                     class
+                    color="is-blue"
                     :key="assignments[0].id"
                     :name="assignments[0].name"
                     :date="assignments[0].date"
