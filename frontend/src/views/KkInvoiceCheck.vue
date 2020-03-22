@@ -11,7 +11,11 @@
                 <b-field class="amount" label="€ Gesamtbetrag">
                     <b-input type="number"></b-input>
                 </b-field>
-                <b-button class="btn" type="is-blue" @click="login()">Jetzt Beleg prüfen lassen</b-button>
+                <b-button
+                    class="btn"
+                    type="is-blue"
+                    @click="$router.push('/mein-profil')"
+                >Jetzt Beleg prüfen lassen</b-button>
             </div>
         </div>
         <p>
