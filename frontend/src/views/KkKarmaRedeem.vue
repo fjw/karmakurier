@@ -2,7 +2,7 @@
   <div class="normalize-width">
     <KkKarmaHeader></KkKarmaHeader>
     <h1 class="title">Karmapunkte einlösen</h1>
-    <p class="subtitle">Bei folgenden Partnern können Sie Ihre Karmapunkte einlösen:</p>
+    <p class="subtitle">Bei folgenden Partnern kannst du deine Karmapunkte einlösen:</p>
     <section>
       <KkPartnerList />
     </section>
