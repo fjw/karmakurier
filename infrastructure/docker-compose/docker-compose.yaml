@@ -2,20 +2,20 @@ version: '3'
  
 services:
 
-#  web:
-#    build:
-#      context: ../../frontend
-#      dockerfile: Dockerfile
-#    image: coronakarma-webapp:1.0
-#    container_name: coronakarma-webapp
-#    restart: always
+  web:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    image: coronakarma-webapp:1.0
+    container_name: coronakarma-webapp
+    restart: always
 #    depends_on:
 #      - api
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    networks:
-#      - coronakarma-network
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - coronakarma-network
 
 #  api:
 #    build:
