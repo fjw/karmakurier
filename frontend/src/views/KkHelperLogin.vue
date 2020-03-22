@@ -20,7 +20,7 @@
         </p>
         <p>
             Du hast noch keinen Account? Dann
-            <a href="/registrieren">logge dich hier ein.</a>
+            <a href="/registrieren">registriere dich hier ein.</a>
         </p>
     </div>
 </template>
