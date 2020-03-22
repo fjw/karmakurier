@@ -4,7 +4,7 @@
         <div class="logo">
             <img src="@/assets/logo.svg" alt />
             <div class="email">
-                <a>presse@karmakurier.org</a>
+                <a>info@karmakurier.org</a>
             </div>
         </div>
 
