@@ -1,5 +1,6 @@
 <template>
     <div class="profile-wrapper normalize-width">
+        <h2 class="title">Mein Profil</h2>
         <div class="seperator">
             <h3 class="subtitle">Jetzige Missonen</h3>
             <div class="tasks">
@@ -35,9 +36,18 @@
         <div class="stats">
             <h3 class="subtitle">Statistik</h3>
             <div class="box">
-                <h4>Missionen in Prüfung: 4</h4>
-                <h4>Wartende Karmapunkte: 420</h4>
-                <h4>Abgeschlossene Missionen: 12</h4>
+                <h4>
+                    Missionen in Prüfung:
+                    <span>4</span>
+                </h4>
+                <h4>
+                    Wartende Karmapunkte:
+                    <span>420</span>
+                </h4>
+                <h4>
+                    Abgeschlossene Missionen:
+                    <span>12</span>
+                </h4>
             </div>
         </div>
 
@@ -46,7 +56,10 @@
                 <div class="btns">
                     <b-switch type="is-success">Erreichbar für Anrufe</b-switch>
 
-                    <b-button type="is-primary">Belege prüfen</b-button>
+                    <b-button
+                        type="is-primary"
+                        @click="$router.push('/beleg-check')"
+                    >Belege einreichen</b-button>
                 </div>
             </div>
         </div>
@@ -106,6 +119,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/components/Branding.scss";
+
 .stats {
     margin: 24px 0;
 }
@@ -120,6 +135,13 @@ export default {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+    }
+}
+
+h4 {
+    span {
+        color: $blue;
+        font-weight: 700;
     }
 }
 </style>
