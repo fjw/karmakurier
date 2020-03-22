@@ -2,26 +2,26 @@
   <div class="login-wrapper">
     <div class="form-wrapper">
       <div class="title">
-        <span>Toll,</span> dass Sie dabei sein möchtest!
+        <span>Toll,</span> dass du dabei sein möchtest!
       </div>
         <p>
-            Füllen Sie nachfolgendes Formular in Ruhe aus
-            Sobald Sie sich registriert haben kann es schon losgehen!
+            Fülle nachfolgendes Formular in Ruhe aus
+            Sobald du dich registriert hast kann es schon losgehen!
         </p>
         <p>
-            Sie können auf zwei unterschiedlichen Wegen mit unseren Hilfesuchenden in Kontakt treten.
+            Du kannst auf zwei unterschiedlichen Wegen mit unseren Hilfesuchenden in Kontakt treten.
         </p>
         <p>
-            1. Sie nehmen aktiv via Anruf Anfragen von Hilfesuchenden entgegen, die sich in Ihrer Nähe befinden und unterstützen diese bei der Dateneingabe in unser System.
+            1. Du nimmst aktiv via Anruf Anfragen von Hilfesuchenden entgegen, die sich in deiner Nähe befinden und unterstützt diese bei der Dateneingabe in unser System.
         </p>
         <p>
             oder
         </p>
         <p>
-            2. Sie können aktuelle Anfragen von Hilfesuchenden direkt aus unserer Datenbank bestätigen
+            2. Du kannst aktuelle Anfragen von Hilfesuchenden direkt aus unserer Datenbank bestätigen
         </p>
         <p>
-            Anschließend füllen Sie Ihr Karmakonto durch gute Taten auf und können diese jederzeit bei unseren Karma-Partnern einlösen.
+            Anschließend füllen du dein Karmakonto durch gute Taten auf und kannst diese jederzeit bei unseren Karma-Partnern einlösen.
         </p>
         <p></p>
 
