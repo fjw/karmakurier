@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <div class="column">
-      <KkPartnerItem name="Aldi" logoUrl="/img/partners/aldi.png" />
+      <KkPartnerItem name="Tegut" logoUrl="/img/partners/tegut.png" />
     </div>
     <div class="column">
       <KkPartnerItem name="Rewe" logoUrl="/img/partners/rewe.png" />
