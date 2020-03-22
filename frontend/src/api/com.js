@@ -34,7 +34,7 @@ export default {
 
 
 
-
+//--------------- nur als Vorlage
     getFiles() {
         return new Promise(resolve => {
             axios.get("/editorapi/getfiles").then(r => resolve(r.data));
