@@ -1,19 +1,27 @@
 <template>
     <div id="app">
-        <KkNavigation />
+        <KkPublicNavigation v-if="isLoggedIn === false" />
+        <KkUserNavigation v-else-if="isLoggedIn === true" />
         <router-view />
         <KkFooter />
     </div>
 </template>
 
 <script>
-import KkNavigation from "@/components/organisms/KkNavigation.vue";
+import KkPublicNavigation from "@/components/organisms/KkPublicNavigation.vue";
+import KkUserNavigation from "@/components/organisms/KkUserNavigation.vue";
 import KkFooter from "@/components/organisms/KkFooter.vue";
 
 export default {
     components: {
-        KkNavigation,
+        KkPublicNavigation,
+        KkUserNavigation,
         KkFooter
+    },
+    computed: {
+        isLoggedIn() {
+            return this.$store.state.isLoggedIn;
+        }
     }
 };
 </script>

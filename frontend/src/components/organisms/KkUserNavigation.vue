@@ -1,6 +1,6 @@
 <template>
     <nav class="navigation normalize-width">
-        <div class="logo" @click="isLoggedIn ? $router.push('/dashboard') : $router.push('/')">
+        <div class="logo" @click="$router.push('/mein-profil')">
             <!-- <img src="@/assets/logo.svg" alt="Karmakurier Logo" /> -->
             <video autoplay muted>
                 <source src="@/assets/logo_animated_cropped.mp4" type="video/mp4" />
@@ -11,40 +11,34 @@
             <i class="fas fa-bars"></i>
         </div>
 
-        <div class="menu-items" v-if="isLoggedIn">
+        <div class="menu-items">
             <ul>
                 <li>
-                    <router-link to="/dashboard">Hey, Sebastian</router-link>
+                    <router-link to="/mein-profil">mein profil</router-link>
                 </li>
-                <li @click="$router.push('/dashboard')">
-                    <img src="/dummy_profile.jpg" alt />
+                <li>
+                    <router-link to="/meine-auftraege">meine aufräge</router-link>
+                </li>
+                <li>
+                    <router-link to="auftraege">aufträge finden</router-link>
+                </li>
+                <li @click="logOut()">
+                    <router-link to="einloggen">ausloggen</router-link>
                 </li>
             </ul>
         </div>
 
-        <div class="menu-items" v-else>
+        <div class="menu-items">
             <ul>
-                <li>
-                    <router-link to="/suche-hilfe">suche</router-link>
-                </li>
-                <li>
-                    <router-link to="/moechte-helfen">biete</router-link>
-                </li>
-                <li>
-                    <router-link to="faq">faq</router-link>
-                </li>
-                <li class="helper-login">
-                    <router-link to="einloggen">helfer login</router-link>
+                <li @click="$router.push('/mein-profil')">
+                    <img src="/dummy_profile.jpg" alt />
                 </li>
             </ul>
         </div>
 
         <div class="open-menu" :class="{expand: expandMenu}">
             <div class="top normalize-width">
-                <div
-                    class="logo"
-                    @click="isLoggedIn ? $router.push('/dashboard') : $router.push('/')"
-                >
+                <div class="logo" @click="$router.push('/mein-profil')">
                     <img src="@/assets/logo_inverted.svg" alt="Karmakurier Logo" />
                 </div>
 
@@ -54,9 +48,10 @@
             </div>
             <div class="items normalize-width">
                 <ul>
-                    <li>Eins</li>
-                    <li>Zwei</li>
-                    <li>Drei</li>
+                    <li @click="$router.push('/mein-profil')">Mein Profil</li>
+                    <li @click="$router.push('/meine-auftraege')">Meine Aufträge</li>
+                    <li @click="$router.push('/auftraege')">Aufträge finden</li>
+                    <li @click="logOut()">Ausloggen</li>
                 </ul>
             </div>
         </div>
@@ -64,8 +59,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
     data() {
         return {
@@ -73,7 +66,12 @@ export default {
         };
     },
     props: {},
-    computed: mapState(["isLoggedIn"])
+    methods: {
+        logOut() {
+            this.$store.dispatch("logOut");
+            this.$router.push("/einloggen");
+        }
+    }
 };
 </script>
 
@@ -109,19 +107,19 @@ export default {
     &:hover {
         background-color: rgba($primary, 0.16);
     }
+    @media only screen and (min-width: 910px) {
+        display: none;
+    }
 }
 
 .fas {
     display: inline-block;
     font-size: 22px;
-    @media only screen and (min-width: 560px) {
-        display: none;
-    }
 }
 
 .menu-items {
     display: none;
-    @media only screen and (min-width: 560px) {
+    @media only screen and (min-width: 910px) {
         display: block;
     }
     ul {
