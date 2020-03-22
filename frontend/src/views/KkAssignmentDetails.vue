@@ -19,13 +19,18 @@
     <div ref="map" class="map"></div>
 
     <div class="buttons">
-      <template v-if="!activated">
-        <div class="custom-button blue" @click="activated = true">Auftrag annehmen!</div>
-      </template>
-      <template v-if="activated">
-        <div class="custom-button orange">Kontakt aufnehmen!</div>
-        <div class="custom-button blue" @click="$router.push('/dashboard');">Auftrag abschliessen!</div>
-      </template>
+      <div v-if="isLoggedIn">
+        <template v-if="!activated">
+          <div class="custom-button blue" @click="activated = true">Auftrag annehmen!</div>
+        </template>
+        <template v-if="activated">
+          <div class="custom-button orange">Kontakt aufnehmen!</div>
+          <div class="custom-button blue" @click="$router.push('/dashboard');">Auftrag abschliessen!</div>
+        </template>
+      </div>
+      <div v-else>
+        <div class="custom-button blue" @click="logIn()">Einloggen</div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +38,7 @@
 <script>
 import L from "leaflet";
 import "leaflet-providers";
+import { mapState } from "vuex";
 
 export default {
   name: "KkAssignmentDetails",
@@ -50,6 +56,14 @@ export default {
       lon: 11.62732,
       activated: false
     };
+  },
+
+  computed: mapState(["isLoggedIn"]),
+
+  methods: {
+    logIn() {
+      this.$router.push("/einloggen");
+    }
   },
 
   mounted() {

@@ -26,7 +26,7 @@ export default {
   methods: {
     login() {
       this.$store.commit("logIn");
-      this.$router.push("/dashboard");
+      this.$router.go(-1); // go back
     }
   }
 };
