@@ -7,6 +7,7 @@
                 <a>presse@karmakurier.org</a>
             </div>
         </div>
+        <div class="partner"></div>
         <div class="nav">
             <a @click="$router.push('/')" class="copyright">© Copyright karmakurier 2020</a>
             <a @click="$router.push('/impressum')">Impressum</a>
