@@ -1,37 +1,26 @@
 <template>
   <div>
-    <!--
-        <div class="pointbg">
-            <div
-                    class="karma-point"
-                    v-for="i in points"
-                    :key="i"
-                    :style="{left: randomNumber(i)+'%', top: randomNumber(i)+'%'}"
-            >
-                <b-tooltip label="Vanessa beim Einkauf geholfen">
-                    <div class="filler"></div>
-                </b-tooltip>
+
+      <div class="container" ref="container">
+
+            <canvas ref="cv"></canvas>
+
+            <div>
+              <hr />
+              <hr />
             </div>
-        </div>
-    -->
 
-    <canvas ref="cv"></canvas>
-
-    <div>
-      <hr />
-      <hr />
-    </div>
-
-    <div class="badge">
-      <div class="ribbons">
-        <img src="@/assets/illustrations/badge_ribbons.svg" />
-      </div>
-      <div class="circle">
-        <img src="@/assets/illustrations/badge.svg" />
-      </div>
-      <div class="points">{{points}}</div>
-      <div class="plabel">karmapunkte</div>
-    </div>
+            <div class="badge">
+              <div class="ribbons">
+                <img src="@/assets/illustrations/badge_ribbons.svg" />
+              </div>
+              <div class="circle">
+                <img src="@/assets/illustrations/badge.svg" />
+              </div>
+              <div class="points">{{points}}</div>
+              <div class="plabel">karmapunkte</div>
+            </div>
+          </div>
   </div>
 </template>
 
@@ -72,12 +61,12 @@ export default {
         var particle = {
           size: 1,
           position: {
-            x: (Math.random() >= 0.5 ? 0 : 1) * window.innerWidth,
+            x: (Math.random() >= 0.5 ? 0 : 1) * this.ctx.canvas.width,
             y: Math.random() * 340
           },
           offset: { x: 0, y: 0 },
           shift: {
-            x: (Math.random() >= 0.5 ? 0 : 1) * window.innerWidth,
+            x: (Math.random() >= 0.5 ? 0 : 1) * this.ctx.canvas.width,
             y: Math.random() * 340
           },
           speed: 0.002 + Math.random() * 0.008,
@@ -102,7 +91,7 @@ export default {
       this.ctx.fillStyle = "rgba(255,255,255,0.7)";
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
 
-      var mouseX = window.innerWidth / 2; //dirty
+      var mouseX = this.ctx.canvas.width / 2; //dirty
       var mouseY = 150;
 
       for (var i = 0, len = this.particles.length; i < len; i++) {
@@ -165,13 +154,13 @@ export default {
     window.addEventListener(
       "resize",
       () => {
-        this.$refs.cv.width = window.innerWidth;
+        this.$refs.cv.width = this.$refs.container.offsetWidth;
         this.$refs.cv.height = 340;
       },
       false
     );
 
-    this.$refs.cv.width = window.innerWidth;
+    this.$refs.cv.width = this.$refs.container.offsetWidth;
     this.$refs.cv.height = 340;
 
     this.ctx = this.$refs.cv.getContext("2d");
@@ -185,6 +174,8 @@ export default {
 
 <style scoped lang="scss">
 @import "@/components/Branding.scss";
+
+
 
 .badge {
   width: 300px;
@@ -257,33 +248,11 @@ hr {
   }
 }
 
-/*
-    .karma-point {
-        position: absolute;
-        height: 10px;
-        width: 10px;
-        background-color: rgba(white, 0.4);
-        border-radius: 100%;
-        box-shadow: 0px 0px 4px 0px rgba($primary, 0.75);
+.container {
+    position: relative;
+}
 
-        &::after {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 100%;
-            background-color: rgba(white, 0.8);
-            box-shadow: 0px 0px 4px 0px rgba($primary, 0.75);
-            top: 3px;
-            left: 3px;
-        }
-        .filler {
-            transform: translate(0px, -8px);
-            width: 10px;
-            height: 10px;
-        }
-    }
-*/
+
 canvas {
   position: absolute;
 }
