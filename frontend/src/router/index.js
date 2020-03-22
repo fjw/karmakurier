@@ -8,8 +8,9 @@ import KkHelperLogin from "../views/KkHelperLogin.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
-import KkAssignmentSearch from "../views/KkAssignmentSearch.vue";
+import KkAssignmentSearchView from "../views/KkAssignmentSearchView.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
+import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
 
 // User Routes
 import KkDashboard from "../views/KkDashboard.vue";
@@ -58,7 +59,7 @@ const routes = [
 	{
 		path: "/moechte-helfen",
 		name: "AssignmentSerach",
-		component: KkAssignmentSearch
+		component: KkAssignmentSearchView
 	},
 	{
 		path: "/faq",
@@ -79,6 +80,11 @@ const routes = [
 		path: "/beleg-check",
 		name: "InvoiceCheck",
 		component: KkInvoiceCheck
+	},
+	{
+		path: "/redeem",
+		name: "KarmaRedeem",
+		component: KkKarmaRedeem
 	},
 
 	//Auditor Routes
