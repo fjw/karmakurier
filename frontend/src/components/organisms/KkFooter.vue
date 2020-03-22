@@ -7,13 +7,21 @@
                 <a>presse@karmakurier.org</a>
             </div>
         </div>
+
         <div class="partner-wrapper">
-            <div class="partner">
-                <img src="@/assets/partner/bundesregierung.png" alt />
-            </div>
-            <div class="partner">
-                <img src="@/assets/partner/Logo_WIRvsVIRUS.jpg" alt />
-            </div>
+            <a
+                href="https://www.bundesregierung.de/breg-de/themen/coronavirus/wir-vs-virus-1731968"
+                target="_blank"
+            >
+                <div class="partner">
+                    <img src="@/assets/partner/bundesregierung.png" alt />
+                </div>
+            </a>
+            <a href="https://wirvsvirushackathon.org/" target="_blank">
+                <div class="partner">
+                    <img src="@/assets/partner/Logo_WIRvsVIRUS.jpg" alt />
+                </div>
+            </a>
         </div>
         <div class="nav">
             <a @click="$router.push('/')" class="copyright">© Copyright karmakurier 2020</a>

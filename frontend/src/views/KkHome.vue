@@ -117,6 +117,9 @@ export default {
         &:last-child {
             flex-direction: row-reverse;
             margin-top: 24px;
+            @media only screen and (min-width: 512px) {
+                margin-top: 0px;
+            }
         }
         @media only screen and (min-width: 960px) {
             flex-direction: row;
