@@ -91,14 +91,14 @@ export default {
     &:hover {
         background-color: rgba($primary, 0.16);
     }
+    @media only screen and (min-width: 560px) {
+        display: none;
+    }
 }
 
 .fas {
     display: inline-block;
     font-size: 22px;
-    @media only screen and (min-width: 560px) {
-        display: none;
-    }
 }
 
 .menu-items {
