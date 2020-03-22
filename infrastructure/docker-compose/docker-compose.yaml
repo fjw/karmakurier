@@ -43,12 +43,12 @@ services:
  
   db:
     image: postgres:12.2-alpine
-    container_name: coronakarma-mongodb
+    container_name: coronakarma-postgres
     restart: always
     ports:
       - "5432"
     environment:
-      - POSTGRES_PASSWORD:s8f8silf43w3$348f
+      - POSTGRES_PASSWORD="s8f8silf43w3348f"
     volumes:
       - /var/postgres:/var/lib/postgresql/data
     networks:
