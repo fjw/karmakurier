@@ -1,12 +1,11 @@
-package com.coronakarma.backend.repository;
+package com.coronakarma.backend.common;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
-import com.coronakarma.backend.model.Person;
+import com.coronakarma.backend.common.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 

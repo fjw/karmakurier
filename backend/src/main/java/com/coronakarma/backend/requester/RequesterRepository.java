@@ -1,11 +1,9 @@
-package com.coronakarma.backend.repository;
+package com.coronakarma.backend.requester;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
-import com.coronakarma.backend.model.Requester;
 
 public interface RequesterRepository extends JpaRepository<Requester, Long> {
 

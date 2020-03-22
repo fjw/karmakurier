@@ -1,4 +1,4 @@
-package com.coronakarma.backend.model;
+package com.coronakarma.backend.common;
 
 import java.io.Serializable;
 
