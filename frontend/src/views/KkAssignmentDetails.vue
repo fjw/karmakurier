@@ -54,6 +54,19 @@
 
             L.tileLayer.provider("Wikimedia").addTo(map);
 
+            var karmaicon = L.icon({
+                iconUrl: require('@/assets/illustrations/pin.png'),
+                shadowUrl: require('@/assets/illustrations/pin_shadow.png'),
+
+                iconSize:     [100, 129], // size of the icon
+                shadowSize:   [200, 110], // size of the shadow
+                iconAnchor:   [50, 120], // point of the icon which will correspond to marker's location
+                shadowAnchor: [78, 95],  // the same for the shadow
+                popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+            });
+
+            L.marker([this.lat, this.lon], {icon: karmaicon}).addTo(map);
+
         }
 
     }
@@ -72,7 +85,7 @@
     }
 
     .map {
-        height: 200px;
+        height: 300px;
     }
 
     pre {
