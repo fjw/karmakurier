@@ -5,10 +5,14 @@
             <h3 class="subtitle">Jetzige Missonen</h3>
             <div class="tasks">
                 <kk-assignment
-                    v-for="assignment in myAssignments"
-                    :key="assignment.id"
-                    :assignment="assignment"
+                    class
                     color="is-blue"
+                    :key="assignments[0].id"
+                    :name="assignments[0].name"
+                    :date="assignments[0].date"
+                    :description="assignments[0].description"
+                    :town="assignments[0].town"
+                    :plz="assignments[0].plz"
                 ></kk-assignment>
             </div>
         </div>
@@ -16,14 +20,15 @@
             <h3 class="subtitle">Neue Missonen</h3>
             <div class="tasks">
                 <kk-assignment
-                    v-for="assignment in possibleAssignments"
+                    class
+                    v-for="(assignment) in visibleassignments"
                     :key="assignment.id"
-                    :assignment="assignment"
+                    :name="assignment.name"
+                    :date="assignment.date"
+                    :description="assignment.description"
+                    :town="assignment.town"
+                    :plz="assignment.plz"
                 ></kk-assignment>
-
-                <p v-if="possibleAssignments.length === 0">
-                    Derzeit sind keine Missionen an deiner PLZ verfügbar.
-                </p>
             </div>
         </div>
         <b-button type="is-light" @click="$router.push('/auftraege')">Mehr anzeigen</b-button>
@@ -58,38 +63,57 @@
                 </div>
             </div>
         </div>
-
-        <b-loading :active="loading"></b-loading>
     </div>
 </template>
 
 <script>
 import KkAssignment from "@/views/KkAssignment";
-import com from "../api/com";
-
-// Dummy zip code from user profile.
-const zipCode = "81735";
 
 export default {
-    components: {
-        KkAssignment
-    },
-
     data() {
         return {
-            myAssignments: [],
-            possibleAssignments: [],
-            loading: true
+            plzfilter: "81735",
+            assignments: [
+                {
+                    id: 1,
+                    plz: "81735",
+                    town: "München",
+                    time: Date.now(),
+                    name: "Vanessa",
+                    description:
+                        "3 x Paracetamol\nBitte fragen Sie nach den günstigsten.\n\nWenn es noch Desinfiziermittel gibt würde ich 3 kleine Flaschen nehmen."
+                },
+                {
+                    id: 2,
+                    plz: "81735",
+                    town: "München",
+                    time: Date.now(),
+                    name: "Harald",
+                    description: "3 Äpfel\nEine Packung Oliven."
+                },
+                {
+                    id: 3,
+                    plz: "81735",
+                    town: "München",
+                    time: Date.now(),
+                    name: "Hannelore",
+                    description:
+                        "Ich brauche nur diese einen Kornflakes. Die mit dem Affen auf der Verpackung. Bitte 4 Packungen."
+                }
+            ]
         };
     },
-
-    created() {
-        Promise.all([com.getMyMissions(), com.getMissionsInRegion(zipCode)])
-            .then(([myAssignments, possibleAssignments]) => {
-                this.myAssignments = myAssignments;
-                this.possibleAssignments = possibleAssignments;
-                this.loading = false;
-            });
+    computed: {
+        visibleassignments() {
+            return this.assignments.filter(
+                assignment =>
+                    assignment.plz.startsWith(this.plzfilter) &&
+                    this.plzfilter !== ""
+            );
+        }
+    },
+    components: {
+        KkAssignment
     }
 };
 </script>

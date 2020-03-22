@@ -1,19 +1,4 @@
 import axios from "axios";
-import parseISO from "date-fns/parseISO";
-
-/**
- * Fix date in data from API.
- *
- * @param {array} assignments
- * @returns {array}
- */
-function parseAssignments(assignments) {
-    return assignments.map(assignment => {
-        assignment.date = parseISO(assignment.date);
-
-        return assignment;
-    });
-}
 
 export default {
     // postMission() {
@@ -22,15 +7,9 @@ export default {
 
     getMissionsInRegion(zipCode) {
         return new Promise(resolve => {
-            axios.get("/assignments/" + zipCode).then(r => resolve(parseAssignments(r.data)));
+            axios.get("/assignments/" + zipCode).then(r => resolve(r.data.assignments));
         });
     },
-
-    getMyMissions() {
-        return new Promise(resolve => {
-            axios.get("/my-assignments/").then(r => resolve(parseAssignments(r.data)));
-        });
-    }
 
     // getMission(id) {
     //     //only logged in
