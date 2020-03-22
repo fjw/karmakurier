@@ -1,18 +1,23 @@
 <template>
     <div id="app">
-        <div class="demo normalize-width">
-            Achtung Prototyp. Beliebige Zugangsdaten können verwendet werden. Bitte liked und teilt
-            <a
-                href="https://www.youtube.com/watch?v=6Kr9JdEWCt8"
-                target="_blank"
-            >unser Video auf Youtube.</a>
-        </div>
         <template v-if="$route.name !== 'HelperDashboard'">
             <KkPublicNavigation v-if="isLoggedIn === false" />
             <KkUserNavigation v-else-if="isLoggedIn === true" />
         </template>
         <router-view />
         <KkFooter />
+        <div class="normalize-width">
+            <div class="demo">
+                <img src="@/assets/karmakurier_achtung.svg" alt="achtung icon" />
+                <div class="text">
+                    Achtung Prototyp. Beliebige Zugangsdaten können verwendet werden. Bitte liked und teilt
+                    <a
+                        href="https://www.youtube.com/watch?v=6Kr9JdEWCt8"
+                        target="_blank"
+                    >unser Video auf Youtube.</a>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -61,8 +66,40 @@ body {
 .demo {
     border: solid 3px $primary;
     border-radius: 8px;
-    // padding: 8px;
-    margin: auto;
+    padding: 8px 12px 8px 12px;
+    margin: 8px 0;
     font-weight: 700;
+    text-align: left;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+        display: inline;
+    }
+    a {
+        margin-left: 4px;
+        &:hover {
+            text-decoration: underline;
+            color: $primary;
+        }
+    }
+    img {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        margin-right: 16px;
+    }
+    @media only screen and (min-width: 512px) {
+        display: block;
+        img {
+            margin-bottom: -6px;
+        }
+    }
+    @media only screen and (min-width: 1100px) {
+        img {
+            margin-bottom: -10px;
+            margin-right: 8px;
+        }
+    }
 }
 </style>
