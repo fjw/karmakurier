@@ -24,7 +24,7 @@
             </a>
         </div>
         <div class="nav">
-            <a @click="$router.push('/')" class="copyright">© Copyright karmakurier 2020</a>
+            <a @click="$router.push('/')" class="copyright">© Copyright 2020 | karmakurier</a>
             <a @click="$router.push('/impressum')">Impressum</a>
         </div>
     </div>
