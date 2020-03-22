@@ -43,19 +43,34 @@ services:
  
   db:
     build:
-    context: ../../database
-    dockerfile: Dockerfile
+      context: ../../database
+      dockerfile: Dockerfile
     image: coronakarma-db:1.0
     container_name: coronakarma-postgres
     restart: always
     ports:
       - "5432"
     environment:
-      - POSTGRES_PASSWORD="s8f8silf43w3348f"
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
+      -
     volumes:
       - /var/postgres:/var/lib/postgresql/data
     networks:
       - coronakarma-network
+
+  postgrest:
+    build:
+      context: ../../database/postgrest
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - PGRST_DB_URI=
+      - PGRST_DB_SCHEMA=
+      - PGRST_DB_ANON_ROLE=
 
   adminer:
     image: adminer:4.7
