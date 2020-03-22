@@ -9,6 +9,7 @@ import KkHelperSignup from "../views/KkHelperSignup.vue";
 import KkQuestions from "../views/KkQuestions.vue";
 import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
+import KkInvoiceCheck from "../views/KkInvoiceCheck.vue";
 
 Vue.use(VueRouter);
 
@@ -58,6 +59,11 @@ const routes = [
 		path: "/suche-hilfe",
 		name: "SearchHelp",
 		component: KkSearchHelp
+	},
+	{
+		path: "/beleg-check",
+		name: "InvoiceCheck",
+		component: KkInvoiceCheck
 	}
 ];
 

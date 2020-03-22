@@ -11,9 +11,9 @@
         <div class="menu-items" v-if="loggedIn">
             <ul>
                 <li>
-                    <router-link to="/mein-profil">Hey, Sebastian</router-link>
+                    <router-link to="/dashboard">Hey, Sebastian</router-link>
                 </li>
-                <li @click="$router.push('/mein-profil')">
+                <li @click="$router.push('/dashboard')">
                     <img src="/dummy_profile.jpg" alt />
                 </li>
             </ul>
