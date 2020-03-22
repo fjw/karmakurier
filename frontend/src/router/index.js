@@ -10,6 +10,7 @@ import KkContact from "../views/KkContact.vue";
 import KkSearchHelp from "../views/KkSearchHelp.vue";
 import KkAssignmentSearchView from "../views/KkAssignmentSearchView.vue";
 import KkAssignmentOverview from "../views/KkAssignmentOverview.vue";
+import KkKarmaRedeem from "../views/KkKarmaRedeem.vue";
 
 // User Routes
 import KkDashboard from "../views/KkDashboard.vue";
@@ -79,6 +80,11 @@ const routes = [
 		path: "/beleg-check",
 		name: "InvoiceCheck",
 		component: KkInvoiceCheck
+	},
+	{
+		path: "/redeem",
+		name: "KarmaRedeem",
+		component: KkKarmaRedeem
 	},
 
 	//Auditor Routes
