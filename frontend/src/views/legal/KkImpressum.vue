@@ -16,7 +16,7 @@
 
         <p>
             <strong>Vertreten durch:</strong>
-            <br />Dr. Andreas Geburtig-Chiocchetti, Benjamin Wiedenbrüg, Andreas Olck, Jonas Morgner, Larisa Espejo
+            <br />Dr. Andreas Geburtig-Chiocchetti, Benjamin Wiedenbrüg, Andreas Olck, Jonas Morgner, Larisa Espejo, Nelson Javier Mejia
         </p>
 
         <h2>Kontakt</h2>
