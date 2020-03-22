@@ -2,43 +2,43 @@ version: '3'
  
 services:
 
-  web:
-    build:
-      context: ../../frontend
-      dockerfile: Dockerfile
-    image: coronakarma-webapp:1.0
-    container_name: coronakarma-webapp
-    restart: always
-    depends_on:
-      - api
-    ports:
-      - "80:80"
-      - "443:443"
-    networks:
-      - coronakarma-network
+#  web:
+#    build:
+#      context: ../../frontend
+#      dockerfile: Dockerfile
+#    image: coronakarma-webapp:1.0
+#    container_name: coronakarma-webapp
+#    restart: always
+#    depends_on:
+#      - api
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    networks:
+#      - coronakarma-network
 
-  api:
-    build:
-      context: ../../backend
-      dockerfile: Dockerfile
-    image: coronakarma-api:1.0
-    container_name: coronakarma-api
-    restart: always
-    environment:
-      POSTGRES_ROOT_PASSWORD:
-      TZ: Europe/Berlin
-      WAIT_HOSTS: db:5432
-    volumes:
-      - /some/path/nodered-data:/data
-    depends_on:
-      - db
-    ports:
-      - "1881:1881"
-      - "1882:1882"
-      - "8082:8082"
-      - "8083:8083"
-    networks:
-      - coronakarma-network
+#  api:
+#    build:
+#      context: ../../backend
+#      dockerfile: Dockerfile
+#    image: coronakarma-api:1.0
+#    container_name: coronakarma-api
+#    restart: always
+#    environment:
+#      POSTGRES_ROOT_PASSWORD:
+#      TZ: Europe/Berlin
+#      WAIT_HOSTS: db:5432
+#    volumes:
+#      - /some/path/nodered-data:/data
+#    depends_on:
+#      - db
+#    ports:
+#      - "1881:1881"
+#      - "1882:1882"
+#      - "8082:8082"
+#      - "8083:8083"
+#    networks:
+#      - coronakarma-network
     #command: ./wait-for.sh db:5432 -- npm start
  
   db:
@@ -50,7 +50,7 @@ services:
     environment:
       - POSTGRES_PASSWORD:
     volumes:
-      - /some/path/db-data:/var/lib/postgresql/data/pgdata
+      - /var/postgres:/var/lib/postgresql/data
     networks:
       - coronakarma-network
 
@@ -59,6 +59,10 @@ services:
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - coronakarma-network
 
 networks:
   coronakarma-network:
