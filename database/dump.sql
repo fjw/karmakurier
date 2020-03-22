@@ -1,5 +1,5 @@
 -- Adminer 4.7.6 PostgreSQL dump
-\connect "postgres";
+
 CREATE SEQUENCE person_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START  CACHE 1;
 CREATE TABLE "public"."person" (
     "firstName" character varying NOT NULL,

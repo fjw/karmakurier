@@ -1,4 +1,4 @@
-<template>
+p<template>
     <div class="karma-wrapper">
         <div class="profile-wrapper">
             <img src="/dummy_profile.jpg" alt />
