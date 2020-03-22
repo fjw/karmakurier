@@ -1,6 +1,9 @@
 <template>
   <div class="columns">
     <div class="column">
+      <KkFundItem />
+    </div>
+    <div class="column">
       <KkPartnerItem name="Tegut" logoUrl="/img/partners/tegut.png" />
     </div>
     <div class="column">
@@ -14,10 +17,12 @@
 
 <script>
 import KkPartnerItem from "../molecules/KkPartnerItem.vue";
+import KkFundItem from "../molecules/KkFundItem.vue";
 
 export default {
   name: "KkPartnerList",
   components: {
+    KkFundItem,
     KkPartnerItem
   }
 };
