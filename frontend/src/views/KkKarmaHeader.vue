@@ -50,8 +50,6 @@
     var RADIUS_SCALE_MIN = 1;
     var RADIUS_SCALE_MAX = 1.5;
 
-    var QUANTITY = 25;
-
     var mouseIsDown = false;
 
 
@@ -60,7 +58,7 @@
         name: "KkKarmaHeader",
         data() {
             return {
-                points: 66,
+                points: 36,
                 ctx: null,
                 particles: []
             }
@@ -78,7 +76,7 @@
 
                 this.particles = [];
 
-                for (var i = 0; i < QUANTITY; i++) {
+                for (var i = 0; i < this.points; i++) {
                     var particle = {
                         size: 1,
                         position: { x: (Math.random() >= 0.5 ? 0 : 1) * window.innerWidth, y: Math.random() * 340 },
