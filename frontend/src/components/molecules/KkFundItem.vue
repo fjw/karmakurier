@@ -2,7 +2,7 @@
   <div class="card">
     <div
       class="card-content"
-    >Helfen Sie uns mit Ihren Karma-Punkten, unsere Plattform noch besser zu machen.</div>
+    >Hilf uns mit deinen Karma-Punkten noch mehr Menschen zu erreichen!</div>
     <div class="card-footer">
       <a href="#" class="card-footer-item">Meine Karmapunkte für das Projekt spenden</a>
     </div>
