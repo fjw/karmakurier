@@ -76,7 +76,7 @@ const routes = [
 		component: KkHelperLogin
 	},
 	{
-		path: "/regestrieren",
+		path: "/registrieren",
 		name: "HelperRegistration",
 		component: KKHelperSignup
 	},
