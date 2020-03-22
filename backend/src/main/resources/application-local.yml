@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:~/data/coronakarma;AUTO_SERVER=TRUE
+    url: jdbc:h2:mem:coronakarma
     username: sa
     password: sa
 
