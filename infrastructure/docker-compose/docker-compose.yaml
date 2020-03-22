@@ -58,19 +58,19 @@ services:
       - coronakarma-network
 
 
-#  backend:
-#    build:
-#      context: ../../backend
-#      dockerfile: Dockerfile
-#    image: coronakarma-backend:1.0
-#    container_name: coronakarma-postgres
-#    restart: always
-#    ports:
-#      - "8098:8080"
-#    env_file:
-#      - ../../backend/.env
-#    networks:
-#      - coronakarma-network
+  backend:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile
+    image: coronakarma-backend:1.0
+    container_name: coronakarma-backend
+    restart: always
+    ports:
+      - "8098:8080"
+    env_file:
+      - ../../backend/.env
+    networks:
+      - coronakarma-network
 
 
 
