@@ -1,4 +1,4 @@
-# karmakurier
+# karmakurier. füreinander. miteinander.
 
 ## Inspiration:
 
