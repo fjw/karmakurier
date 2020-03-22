@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kk-frontend-deployment
+  namespace: default
+  labels:
+    app: kk-frontend
+    project: karmakurier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kk-frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: kk-frontend
+        project: csr
+    spec:
+      containers:
+      - name: kk-frontend
+        image: #Tbd.
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: kk-frontend
+        envFrom:
+        - configMapRef:
+            name: kk-frontend-config

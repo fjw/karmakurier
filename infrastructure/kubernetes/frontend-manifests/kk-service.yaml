@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kk-frontend-svc
+  namespace: default
+  labels:
+    project: karmakurier
+spec:
+  type: ClusterIP
+  selector:
+    app: kk-frontend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      name: kk-frontend-svc

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kk-db-deployment
+  namespace: default
+  labels:
+    app: kk-db
+    project: karmakurier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kk-db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: kk-db
+        project: csr
+    spec:
+      containers:
+      - name: kk-db
+        image: mariadb:10.4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3306
+          name: mariadb
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: kk-db-secret
+                key: MYSQL_ROOT_PASSWORD
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: kk-db-storage
+      volumes:
+      - name: kk-db-storage
+        persistentVolumeClaim:
+          claimName: kk-db-pvc
