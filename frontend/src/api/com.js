@@ -9,7 +9,7 @@ export default {
 
     },
 
-    getMissions(plz) {
+    getMissionsInRegion(plz) {
         // mindestens 3 ziffern
 
     },
