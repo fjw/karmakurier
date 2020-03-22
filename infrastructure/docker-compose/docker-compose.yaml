@@ -48,7 +48,7 @@ services:
     ports:
       - "5432"
     environment:
-      - POSTGRES_PASSWORD:
+      - POSTGRES_PASSWORD:s8f8silf43w3$348f
     volumes:
       - /var/postgres:/var/lib/postgresql/data
     networks:
