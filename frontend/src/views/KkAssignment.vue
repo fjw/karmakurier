@@ -4,7 +4,6 @@
         <b-collapse class="card" animation="slide" aria-id="contentIdForA11y3" :open="false">
             <div
                     slot="trigger"
-                    slot-scope="props"
                     class="card-header"
                     role="button"
                     aria-controls="contentIdForA11y3">
@@ -16,11 +15,6 @@
                         {{timesince}}
                     </div>
                 </div>
-                <a class="card-header-icon">
-                    <b-icon
-                            :icon="props.open ? 'menu-down' : 'menu-up'">
-                    </b-icon>
-                </a>
             </div>
             <div class="card-content">
                 <div class="content">
@@ -28,7 +22,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <router-link class="card-footer-item" :to="{ name: 'AssignmentDetails', params: { id: id }}">Jetzt helfen!</router-link>
+                <div class="custom-button blue" @click="$router.push('/auftragsdetails')">Jetzt helfen!</div>
             </footer>
         </b-collapse>
 
@@ -81,5 +75,9 @@
                 font-weight: normal;
             }
         }
+    }
+
+    .custom-button {
+        margin-bottom: 20px;
     }
 </style>
