@@ -29,7 +29,7 @@
         </template>
       </div>
       <div v-else>
-        <div class="custom-button blue" @click="logIn()">Einloggen</div>
+        <div class="custom-button blue" @click="logIn()">Mission annehmen</div>
       </div>
     </div>
   </div>
