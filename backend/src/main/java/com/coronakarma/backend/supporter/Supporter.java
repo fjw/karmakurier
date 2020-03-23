@@ -5,14 +5,14 @@ import com.coronakarma.backend.common.Person;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "supporter")
+@Table(name = "SUPPORTER")
 public class Supporter {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name="personId")
 	private Person person;
 	
