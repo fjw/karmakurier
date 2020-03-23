@@ -64,12 +64,15 @@
             v-model="models.agbCheckbox"
           >Ich bin damit einverstanden, dass karmakurier die von mir im vorstehenden Formular angegebenen personenbezogenen Daten für den Zweck der Kontaktaufnahme verarbeitet. Eine Weitergabe an Dritte findet nicht statt, es sei denn es wird ausdrücklich darauf hingewiesen. Unsere Datenschutzerklärung mit sämtlichen Informationen gemäß Art 13 DSGVO zur Datenverarbeitung durch karmakurier und zu Ihren Rechten können Sie unter Datenschutzerklärung einsehen. Den Datenschutzbeauftragten von karmakurier erreichen Sie unter info@karmakurier.de</b-checkbox>
         </b-field>
-        <b-button
-          class="btn"
-          type="is-blue"
-          :disabled="!models.agbCheckbox"
-          @click="$router.push('/danke')"
-        >Jetzt Einkaufshelfer benachrichtigen</b-button>
+
+        <b-field class="btn">
+          <div
+                  class="custom-button blue"
+                  :class="models.agbCheckbox ? 'enabled' : 'disabled'"
+                  @click="models.agbCheckbox ? $router.push('/danke') : ''"
+          >Jetzt Einkaufshelfer benachrichtigen</div>
+        </b-field>
+
       </div>
     </div>
     <p>

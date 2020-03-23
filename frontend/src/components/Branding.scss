@@ -15,6 +15,8 @@ $black-invert: findColorInvert($black);
 $blue: #2d3cb9;
 $blue-invert: findColorInvert($blue);
 
+$disabled: #bbb;
+
 $primary-background: lighten($primary, 20%);
 $secondary-background: lighten($secondary, 20%);
 
@@ -93,21 +95,40 @@ h6 {
 	padding: 6px 12px 6px 12px;
 	font-weight: 700;
 	font-size: 1.2rem;
-	cursor: pointer;
+
 	text-align: center;
 	transition: all 0.16s ease;
+
+    &.disabled {
+      color: $disabled;
+    }
+
+    &.enabled {
+      cursor: pointer;
+    }
+
+
 	&.orange {
 		position: relative;
 		border: 3px solid $primary;
 
-		&:hover {
+        &.disabled {
+          border: 3px solid $disabled;
+        }
+
+		&.enabled:hover {
 			color: white;
 			background-color: $primary;
 		}
 	}
 	&.blue {
 		border: 3px solid $secondary;
-		&:hover {
+
+        &.disabled {
+          border: 3px solid $disabled;
+        }
+
+		&.enabled:hover {
 			color: white;
 			background-color: $secondary;
 		}
