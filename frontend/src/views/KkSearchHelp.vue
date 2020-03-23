@@ -47,11 +47,16 @@
         <b-field label="Maximaler Einkaufswert">
           <b-input type="number" v-model="models.price" />
         </b-field>
+
+
+
         <b-field label="Zahlung">
-          <b-select v-model="models.paymentMethod">
-            <option value="bargeld">Bargeld</option>
-            <option value="paypal">Paypal</option>
-          </b-select>
+            <div>
+                <b-radio v-model="models.prefered" native-value="cash">Bargeld</b-radio>
+                <b-radio v-model="models.prefered" class="radio-group-radio"
+                        native-value="PayPal"
+                >PayPal</b-radio>
+            </div>
         </b-field>
 
         <b-field class="privacy" label="Datenschutz">
