@@ -6,6 +6,7 @@ import org.karmakurier.backend.repository.MissionRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.karmakurier.backend.security.AuthoritiesConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -358,6 +359,7 @@ public class MissionResourceIT {
 
     @Test
     @Transactional
+    @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
     public void updateMission() throws Exception {
         // Initialize the database
         missionRepository.saveAndFlush(mission);
@@ -405,6 +407,7 @@ public class MissionResourceIT {
 
     @Test
     @Transactional
+    @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
     public void updateNonExistingMission() throws Exception {
         int databaseSizeBeforeUpdate = missionRepository.findAll().size();
 
@@ -423,6 +426,7 @@ public class MissionResourceIT {
 
     @Test
     @Transactional
+    @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
     public void deleteMission() throws Exception {
         // Initialize the database
         missionRepository.saveAndFlush(mission);

@@ -6,7 +6,85 @@
 	},
 	"item": [
 		{
-			"name": "Login",
+			"name": "[Anon] Create mission",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"firstName\": \"Billie\",\r\n    \"lastName\": \"Eilish\",\r\n    \"street\": \"Willms Burgs\",\r\n    \"zip\": \"12345\",\r\n    \"city\": \"California\",\r\n    \"email\": \"billie.eilish@example.com\",\r\n    \"phoneNumber\": null,\r\n    \"order\": \"Butter, bread, corn\",\r\n    \"priceCategory\": \"PREMIUM\",\r\n    \"maxPrice\": 20.00,\r\n    \"paymentMethod\": \"CASH\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/missions",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Anon] Get all missions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/missions",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Anon] Search missions by zip",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/missions?zipPrefix=603",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					],
+					"query": [
+						{
+							"key": "zipPrefix",
+							"value": "603"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as Admin",
 			"event": [
 				{
 					"listen": "test",
@@ -48,7 +126,7 @@
 			"response": []
 		},
 		{
-			"name": "Create mission",
+			"name": "[Admin] Delete mission",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -60,7 +138,7 @@
 						}
 					]
 				},
-				"method": "POST",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -72,75 +150,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{server_url}}/api/missions",
+					"raw": "{{server_url}}/api/missions/1",
 					"host": [
 						"{{server_url}}"
 					],
 					"path": [
 						"api",
-						"missions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all missions",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{jwt_token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{server_url}}/api/missions",
-					"host": [
-						"{{server_url}}"
-					],
-					"path": [
-						"api",
-						"missions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search missions by zip",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{jwt_token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{server_url}}/api/missions?zipPrefix=Aweso",
-					"host": [
-						"{{server_url}}"
-					],
-					"path": [
-						"api",
-						"missions"
-					],
-					"query": [
-						{
-							"key": "zipPrefix",
-							"value": "Aweso"
-						}
+						"missions",
+						"1"
 					]
 				}
 			},

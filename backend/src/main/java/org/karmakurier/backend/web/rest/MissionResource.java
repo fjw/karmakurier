@@ -92,7 +92,6 @@ public class MissionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of missions in body.
      */
     @GetMapping("/missions")
-    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public List<Mission> getAllMissions(@RequestParam Optional<String> zipPrefix) {
         if (zipPrefix.isPresent() && StringUtils.isNotEmpty(zipPrefix.get())) {
             log.debug("REST request to get all Missions whose zip start with " + zipPrefix.get());
