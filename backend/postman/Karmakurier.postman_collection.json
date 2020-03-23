@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "fe5eea87-29d9-4c1d-bab4-0c3d7ad00ed7",
+		"name": "Karmakurier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c5baaf6b-516e-44a5-b485-c728070db16d",
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.environment.set(\"jwt_token\", response.id_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"password\":\"admin\",\"rememberMe\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/authenticate",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create mission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"firstName\": \"Billie\",\r\n    \"lastName\": \"Eilish\",\r\n    \"street\": \"Willms Burgs\",\r\n    \"zip\": \"12345\",\r\n    \"city\": \"California\",\r\n    \"email\": \"billie.eilish@example.com\",\r\n    \"phoneNumber\": null,\r\n    \"order\": \"Butter, bread, corn\",\r\n    \"priceCategory\": \"PREMIUM\",\r\n    \"maxPrice\": 20.00,\r\n    \"paymentMethod\": \"CASH\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/missions",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/missions",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search missions by zip",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/missions?zipPrefix=Aweso",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"missions"
+					],
+					"query": [
+						{
+							"key": "zipPrefix",
+							"value": "Aweso"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
