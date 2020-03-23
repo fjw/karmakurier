@@ -26,7 +26,7 @@
         <b-field class="email" label="E-Mail">
           <b-input></b-input>
         </b-field>
-        <b-field class="phone" label="Telefon">
+        <b-field class="phone" label="Telefonnummer">
           <b-input></b-input>
         </b-field>
 
@@ -52,7 +52,7 @@
 
         <b-field label="Zahlung">
             <div>
-                <b-radio v-model="models.prefered" native-value="cash">Bargeld</b-radio>
+                <b-radio v-model="models.prefered" native-value="cash">Barzahlung</b-radio>
                 <b-radio v-model="models.prefered" class="radio-group-radio"
                         native-value="PayPal"
                 >PayPal</b-radio>
