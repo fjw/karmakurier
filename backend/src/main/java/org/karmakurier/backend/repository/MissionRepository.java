@@ -16,4 +16,11 @@ public interface MissionRepository extends JpaRepository<Mission, Long> {
 
     @Query("select mission from Mission mission where mission.assignedHelper.login = ?#{principal.username}")
     List<Mission> findByAssignedHelperIsCurrentUser();
+
+    /**
+     * Returns all missions whose zip codes start with given prefix
+     * @param zipPrefix
+     * @return
+     */
+    List<Mission> findByZipStartingWith(String zipPrefix);
 }

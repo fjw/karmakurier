@@ -1,7 +1,9 @@
 package org.karmakurier.backend.web.rest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.karmakurier.backend.domain.Mission;
 import org.karmakurier.backend.repository.MissionRepository;
+import org.karmakurier.backend.security.AuthoritiesConstants;
 import org.karmakurier.backend.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
@@ -10,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -69,6 +72,7 @@ public class MissionResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/missions")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Mission> updateMission(@Valid @RequestBody Mission mission) throws URISyntaxException {
         log.debug("REST request to update Mission : {}", mission);
         if (mission.getId() == null) {
@@ -83,12 +87,20 @@ public class MissionResource {
     /**
      * {@code GET  /missions} : get all the missions.
      *
+     * @param zipPrefix if given, only results that start with given zipPrefix are returned
+     *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of missions in body.
      */
     @GetMapping("/missions")
-    public List<Mission> getAllMissions() {
-        log.debug("REST request to get all Missions");
-        return missionRepository.findAll();
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
+    public List<Mission> getAllMissions(@RequestParam Optional<String> zipPrefix) {
+        if (zipPrefix.isPresent() && StringUtils.isNotEmpty(zipPrefix.get())) {
+            log.debug("REST request to get all Missions whose zip start with " + zipPrefix.get());
+            return missionRepository.findByZipStartingWith(zipPrefix.get());
+        } else {
+            log.debug("REST request to get all Missions");
+            return missionRepository.findAll();
+        }
     }
 
     /**
@@ -98,6 +110,7 @@ public class MissionResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the mission, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/missions/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.USER + "\")")
     public ResponseEntity<Mission> getMission(@PathVariable Long id) {
         log.debug("REST request to get Mission : {}", id);
         Optional<Mission> mission = missionRepository.findById(id);
@@ -111,6 +124,7 @@ public class MissionResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/missions/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteMission(@PathVariable Long id) {
         log.debug("REST request to delete Mission : {}", id);
         missionRepository.deleteById(id);
