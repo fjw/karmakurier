@@ -1,0 +1,9 @@
+{
+  "karmakurierApp": {
+    "PriceCategory": {
+      "null": "",
+      "PREMIUM": "Premium",
+      "CHEAP": "Günstig"
+    }
+  }
+}

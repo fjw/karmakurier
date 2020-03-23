@@ -25,6 +25,12 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const Mission = () => import('../entities/mission/mission.vue');
+// prettier-ignore
+const MissionUpdate = () => import('../entities/mission/mission-update.vue');
+// prettier-ignore
+const MissionDetails = () => import('../entities/mission/mission-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -141,6 +147,31 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: [Authority.ADMIN] }
+    }
+    ,
+    {
+      path: '/mission',
+      name: 'Mission',
+      component: Mission,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/mission/new',
+      name: 'MissionCreate',
+      component: MissionUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/mission/:missionId/edit',
+      name: 'MissionEdit',
+      component: MissionUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/mission/:missionId/view',
+      name: 'MissionView',
+      component: MissionDetails,
+      meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]

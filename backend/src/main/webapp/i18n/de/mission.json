@@ -1,0 +1,39 @@
+{
+  "karmakurierApp": {
+    "mission": {
+      "home": {
+        "title": "Missions",
+        "createLabel": "Mission erstellen",
+        "createOrEditLabel": "Mission erstellen oder bearbeiten",
+        "notFound": "No Missions found"
+      },
+      "created": "Mission erstellt mit ID {{ param }}",
+      "updated": "Mission aktualisiert mit ID {{ param }}",
+      "deleted": "Mission gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Mission {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Mission"
+      },
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "street": "Straße",
+      "zip": "PLZ",
+      "city": "Ort",
+      "email": "Email",
+      "phoneNumber": "Telefon",
+      "order": "Bestellung",
+      "priceCategory": "Ich kaufe eher",
+      "maxPrice": "Maximaler Einkaufswert",
+      "paymentMethod": "Zahlung",
+      "assignedHelper": "Helfer",
+      "help": {
+        "order": "Was soll gekauft werden?",
+        "priceCategory": "Bevorzugte Preiskategorie",
+        "maxPrice": "Maximaler Preis des Einkaufs",
+        "paymentMethod": "Wie möchten Sie bezahlen"
+      }
+    }
+  }
+}

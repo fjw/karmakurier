@@ -3,13 +3,13 @@ entity Mission {
 
     // Contact details of requester
 
-    firstName       string          required
-    lastName        string          required
-    street          string          required
-    zip             string          required minlength(5) maxlength(5)
-    city            string          required
-    email           string
-    phoneNumber     string
+    firstName       String          required
+    lastName        String          required
+    street          String          required
+    zip             String          required minlength(5) maxlength(5)
+    city            String          required
+    email           String
+    phoneNumber     String
 
     /**
      * What should be bought?
@@ -31,18 +31,15 @@ entity Mission {
 
 relationship ManyToOne {
     /** Which helper has been assigned to the mission */
-    Mission{assignedHelper(lastName)}
-    to
-    /** Missions the helper has accepted */
-    User{acceptedMissions(login)}
+    Mission{assignedHelper(lastName)} to User
 }
 
 enum PriceCategory {
-    PREMIUM (Premium),
-    CHEAP (Günstig)
+    PREMIUM,
+    CHEAP
 }
 
 enum PaymentMethod {
-    PAYPAL (Paypal),
-    CASH (Bargeld)
+    PAYPAL,
+    CASH
 }

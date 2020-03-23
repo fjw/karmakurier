@@ -42,6 +42,7 @@ public class CacheConfiguration {
             createCache(cm, org.karmakurier.backend.domain.User.class.getName());
             createCache(cm, org.karmakurier.backend.domain.Authority.class.getName());
             createCache(cm, org.karmakurier.backend.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.karmakurier.backend.domain.Mission.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

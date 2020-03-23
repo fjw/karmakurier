@@ -1,0 +1,9 @@
+{
+  "karmakurierApp": {
+    "PaymentMethod": {
+      "null": "",
+      "PAYPAL": "Paypal",
+      "CASH": "Bargeld"
+    }
+  }
+}
