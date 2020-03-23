@@ -1,0 +1,48 @@
+
+entity Mission {
+
+    // Contact details of requester
+
+    firstName       string          required
+    lastName        string          required
+    street          string          required
+    zip             string          required minlength(5) maxlength(5)
+    city            string          required
+    email           string
+    phoneNumber     string
+
+    /**
+     * What should be bought?
+     */
+    order           TextBlob        required
+    /**
+     * Preferred price category
+     */
+    priceCategory   PriceCategory   required
+    /**
+     * Maximum accepted price
+     */
+    maxPrice        BigDecimal
+    /**
+     * How to pay the helper
+     */
+    paymentMethod   PaymentMethod   required
+}
+
+relationship ManyToOne {
+    /** Which helper has been assigned to the mission */
+    Mission{assignedHelper(lastName)}
+    to
+    /** Missions the helper has accepted */
+    User{acceptedMissions(login)}
+}
+
+enum PriceCategory {
+    PREMIUM (Premium),
+    CHEAP (Günstig)
+}
+
+enum PaymentMethod {
+    PAYPAL (Paypal),
+    CASH (Bargeld)
+}

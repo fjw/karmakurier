@@ -1,0 +1,53 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.karmakurier.backend",
+      "nativeLanguage": "de"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "karmakurier",
+    "packageName": "org.karmakurier.backend",
+    "packageFolder": "org/karmakurier/backend",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZmNiNzUyZGRjN2M1YTExMGIzM2IyYzRiZGExNmVmYTg5MTFiNmYyZWYxZjBkMDViNGU2NGY5ZmZiYmU4NDE2YTEyNjJjMjMxNDQyMjA0MzUwYzdkNmY1NDMwMjE4Zjc5NDhjYTRjNGFmN2Y4OWJjM2U1ZWIwNTJmYjZiMzU0YmM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "vue",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1584927910800,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-vuejs",
+        "version": "1.7.0"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "de",
+    "languages": ["de"],
+    "blueprints": [
+      {
+        "name": "generator-jhipster-vuejs",
+        "version": "1.7.0"
+      }
+    ]
+  }
+}
