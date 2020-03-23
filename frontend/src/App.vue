@@ -78,7 +78,6 @@ body {
         padding: 8px 12px 8px 12px;
         margin: 8px 0;
         font-weight: 700;
-        text-align: left;
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
