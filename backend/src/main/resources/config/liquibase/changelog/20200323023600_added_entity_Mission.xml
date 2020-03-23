@@ -81,7 +81,7 @@
             <column name="city" type="string"/>
             <column name="email" type="string"/>
             <column name="phone_number" type="string"/>
-            <column name="jhi_order" type="clob"/>
+            <column name="jhi_order" type="string"/>
             <column name="price_category" type="string"/>
             <column name="max_price" type="numeric"/>
             <column name="payment_method" type="string"/>
