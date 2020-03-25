@@ -1,10 +1,10 @@
 <template>
     <nav class="navigation normalize-width">
         <div class="logo" @click="$router.push('/')">
-            <!-- <img src="@/assets/logo.svg" alt="Karmakurier Logo" /> -->
-            <video class="video" autoplay muted playsinline>
+            <img src="@/assets/logo.svg" alt="Karmakurier Logo" />
+            <!-- <video class="video" autoplay muted playsinline>
                 <source src="@/assets/logo_animated_cropped.mp4" type="video/mp4" />
-            </video>
+            </video>-->
         </div>
 
         <div class="hamburger-menu" @click="expandMenu = true">
@@ -170,6 +170,7 @@ export default {
     }
 
     .top {
+        margin-top: 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
