@@ -1,37 +1,50 @@
 <template>
     <div class="footer-wrapper">
         <div class="seperator"></div>
-        <div class="logo">
-            <img src="@/assets/logo.svg" alt />
-            <div class="email">
-                <a>info@karmakurier.org</a>
-            </div>
-        </div>
 
-        <div class="partner-wrapper">
-            <a
-                href="https://www.bundesregierung.de/breg-de/themen/coronavirus/wir-vs-virus-1731968"
-                target="_blank"
-            >
-                <div class="partner">
-                    <img src="@/assets/partner/bundesregierung.png" alt />
+        <div class="flexiflex">
+
+
+            <div>
+                <div class="logo">
+                    <img src="@/assets/logo.svg" alt />
+                    <div class="email">
+                        <a>info@karmakurier.org</a>
+                    </div>
                 </div>
-            </a>
-            <a href="https://wirvsvirushackathon.org/" target="_blank">
-                <div class="partner">
-                    <img src="@/assets/partner/Logo_WIRvsVIRUS.jpg" alt />
+
+                <div class="partner-wrapper">
+                    <a
+                        href="https://www.bundesregierung.de/breg-de/themen/coronavirus/wir-vs-virus-1731968"
+                        target="_blank"
+                    >
+                        <div class="partner">
+                            <img src="@/assets/partner/bundesregierung.png" alt />
+                        </div>
+                    </a>
+                    <a href="https://wirvsvirushackathon.org/" target="_blank">
+                        <div class="partner">
+                            <img src="@/assets/partner/Logo_WIRvsVIRUS.jpg" alt />
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <div class="nav">
-            <a @click="$router.push('/')" class="copyright">© Copyright 2020 | karmakurier</a>
-            <a @click="$router.push('/impressum')">Impressum</a>
+                <div class="nav">
+                    <a @click="$router.push('/')" class="copyright">© Copyright 2020 | karmakurier</a>
+                    <a @click="$router.push('/impressum')">Impressum</a>
+                </div>
+            </div>
+
+            <FusionBanner></FusionBanner>
+
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+import FusionBanner from "../molecules/FusionBanner";
+export default {
+    components: {FusionBanner}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -72,6 +85,16 @@ export default {};
         padding: 0 8px;
         color: gray;
         font-size: 14px;
+    }
+}
+
+.flexiflex {
+    display: flex;
+    justify-content: space-around;
+
+    > div {
+        flex: 1;
+        margin: 5px;
     }
 }
 
