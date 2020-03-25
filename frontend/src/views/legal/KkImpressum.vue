@@ -4,14 +4,14 @@
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
         <p>
-            karmakurier gGMBH
+            karmakurier
             <br />Bergstra&szlig;e 1
             <br />69120 Heidelberg
         </p>
 
         <p>
-            Genossenschaftsregister: DUM 1234567
-            <br />Registergericht: Amtsgericht Musterstadt
+            Genossenschaftsregister: DUMMMY
+            <br />Registergericht: DUMMY
         </p>
 
         <p>
@@ -29,11 +29,11 @@
         <h2>Umsatzsteuer-ID</h2>
         <p>
             Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:
-            <br />DE 999 999 999
+            <br />DUMMY
         </p>
 
         <h2>Gewerbeanmeldung</h2>
-        <p>Die Gewerbeanmeldung nach &sect; 34c GewO wurde am 01.04.2020 durch Ordnungsamt Musterstadt erteilt.</p>
+        <p>Die Gewerbeanmeldung nach &sect; 34c GewO wurde am 01.04.2020 durch Ordnungsamt DUMMY erteilt.</p>
 
         <h2>Verantwortlich f&uuml;r den Inhalt nach &sect; 55 Abs. 2 RStV</h2>
         <p>
