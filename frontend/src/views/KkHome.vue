@@ -2,7 +2,7 @@
     <div class="home-wrapper normalize-width">
         <div class="stage">
             <h1 class="title">
-                <span>karmakurier.</span> füreinander. miteinander.
+                füreinander. miteinander.
             </h1>
             <p
                 class="subtitle"

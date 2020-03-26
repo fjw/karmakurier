@@ -7,7 +7,6 @@
 
             <div>
                 <div class="logo">
-                    <img src="@/assets/logo.svg" alt />
                     <div class="email">
                         <a>info@karmakurier.org</a>
                     </div>
@@ -93,7 +92,7 @@ export default {
     justify-content: space-around;
 
     > div {
-        flex: 1;
+
         margin: 5px;
     }
 }
